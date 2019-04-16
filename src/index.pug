@@ -1,0 +1,24 @@
+extends pug/base
+
+prepend vars
+	- title = 'Флик Фляк'
+
+append vars
+	- link.appleTouchIcon = `${baseDir}/favicon/apple-icon.png`
+	- link.appleTouchIcon57x57 = `${baseDir}/favicon/apple-icon-57x57.png`
+	- link.appleTouchIcon60x60 = `${baseDir}/favicon/apple-icon-60x60.png`
+	- link.appleTouchIcon72x72 = `${baseDir}/favicon/apple-icon-72x72.png`
+	- link.appleTouchIcon76x76 = `${baseDir}/favicon/apple-icon-76x76.png`
+	- link.appleTouchIcon114x114 = `${baseDir}/favicon/apple-icon-114x114.png`
+	- link.appleTouchIcon120x120 = `${baseDir}/favicon/apple-icon-120x120.png`
+	- link.appleTouchIcon144x144 = `${baseDir}/favicon/apple-icon-144x144.png`
+	- link.appleTouchIcon152x152 = `${baseDir}/favicon/apple-icon-152x152.png`
+	- link.appleTouchIcon180x180 = `${baseDir}/favicon/apple-icon-180x180.png`
+	- link.appleTouchIconPrecomposed = `${baseDir}/favicon/apple-icon-precomposed.png`
+	- link.icon = `${baseDir}/favicon/favicon.ico`
+	- link.icon16x16 = `${baseDir}/favicon/favicon-16x16.png`
+	- link.icon32x32 = `${baseDir}/favicon/favicon-32x32.png`
+	- link.icon96x96 = `${baseDir}/favicon/favicon-96x96.png`
+
+block content
+	include pug/parts/header

@@ -1,0 +1,18 @@
+header.main-header
+  .main-header__top
+    .container
+      nav.top-nav
+        ul.top-nav__list
+          each item in ['Вопрос-ответ', 'Доставка и оплата', 'Размеры', 'Отзывы']
+            li.top-nav__item
+              a(href="#").top-nav__link
+                | #{item}
+      nav.social-nav
+        ul.social-nav__list
+          each item in ['ic-vk', 'ic-inst', 'ic-ok', 'ic-fb']
+            li.social-nav__item
+              a(href="#").social-nav__link
+                +svg(`${item}`)(class=`social-nav__ic social-nav__${item}`)
+
+  .main-header__middle
+  .main-header__bottom
