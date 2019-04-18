@@ -72,6 +72,10 @@
     position: absolute;
     top: 55%;
 
+    &.horizontal-image {
+      max-width: none;
+    }
+
     &--bottom {
       top: auto;
       bottom: 53%;
