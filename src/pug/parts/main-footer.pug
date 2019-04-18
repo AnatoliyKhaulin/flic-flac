@@ -1,0 +1,42 @@
+footer.main-footer
+  .main-footer__top
+    .container
+      a.footer-logo(href="#")
+        img(src=`${baseDir}images/logo_gray.png` srcset=`${baseDir}images/logo_gray@2x.png`)
+      nav.footer-nav
+        ul.footer-nav__list
+          each item in ['О НАС', 'КАТАЛОГ', 'РАСПРОДАЖА', 'КОЛЛЕКТИВАМ', 'АКЦИИ', 'КОНТАКТЫ']
+            li.footer-nav__item
+              a.footer-nav__link(href="#")
+                | !{item}
+        ul.footer-nav__list
+          each item in ['Вопрос-ответ', 'Доставка и оплата', 'размеры', 'отзывы']
+            li.footer-nav__item
+              a.footer-nav__link(href="#")
+                | !{item}
+
+      ul.footer-adreses
+        each item in ['Санкт-Петербург, <br> ул. Купчинская 4, корп.4 <br> 8 (981) 104 77 30', 'Санкт-Петербург, <br> пр. Энгельса 98 <br> 8 (981) 104 77 29', 'метро Василеостровская, <br> 16 линия В.О. д. 45 <br> 8 (981) 104 77 35']
+          li.footer-adreses__item
+            strong
+              | !{item}
+
+      .footer-contacts
+        a.footer-contacts__phone(href="tel:")
+          strong
+            | #[span 8 (981)] 104 77 30
+        a.footer-contacts__callback(href="#")
+          | Заказать звонок
+        nav.social-nav
+          ul.social-nav__list
+            each item in ['ic-vk', 'ic-inst', 'ic-ok', 'ic-fb']
+              li.social-nav__item
+                a.social-nav__link(href="#")
+                  +svg(`${item}`)(class=`social-nav__ic social-nav__${item}`)
+
+  .main-footer__bottom
+    .container
+      p
+        | &copy; 2019 ВСЕ ПРАВА ЗАЩИЩЕНЫ
+      p
+        | РАЗРАБОТКА И ПОДДЕРЖКА #[a(href="#") smartraf]

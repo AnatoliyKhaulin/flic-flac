@@ -1,0 +1,148 @@
+@import "../variables";
+
+.main-nav {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+
+  &__list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    position: relative;
+    margin: 0 31px;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 15px 0;
+    padding-bottom: 17px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -11px;
+      top: 50%;
+      display: block;
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      background-color: #fff;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background-color: transparent;
+      transition: width 0.3s, background-color 0.3s;
+    }
+
+    &.active {
+      &::after {
+        width: 100%;
+        background-color: #fff;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      &:hover,
+      &:focus {
+        &::after {
+          width: 100%;
+          background-color: #fff;
+          transition: width 0.3s, background-color 0.3s;
+        }
+
+        + .main-nav__dropdown {
+          opacity: 1;
+          visibility: visible;
+          transition: visibility 0.3s, opacity 0.3s, top 0.3s;
+        }
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: -22px;
+    top: 100%;
+    z-index: 1;
+    list-style: none;
+    padding: 4px 40px 8px 20px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+
+    &-item {
+      margin: 8px 0;
+    }
+
+    &-link {
+      position: relative;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1;
+      text-decoration: none;
+      color: #080808;
+      transition: color 0.2s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-color: transparent;
+      }
+
+      @media (min-width: 1025px) {
+        &:hover {
+          color: $color-limeade;
+          transition: color 0.2s;
+
+          &::after {
+            left: 0;
+            width: 100%;
+            background-color: $color-limeade;
+            transition: background-color 0.3s, left 0.3s, width 0.3s;
+          }
+        }
+      }
+    }
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      transition: visibility 0.3s, opacity 0.3s, top 0.3s;
+    }
+
+    @media (min-width: 1025px) {
+      &:hover,
+      &:focus {
+        opacity: 1;
+        visibility: visible;
+        transition: visibility 0.3s, opacity 0.3s, top 0.3s;
+      }
+    }
+  }
+}

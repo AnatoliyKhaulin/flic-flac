@@ -1,0 +1,129 @@
+@import "../variables";
+
+.hits {
+  position: relative;
+  padding-bottom: 40px;
+  box-shadow: 0 -8px 0 $color-white, 0 0 9px rgba($color-black, 0.2);
+
+  &__title {
+    margin-top: 27px;
+    margin-bottom: 3px;
+    font-family: $font-pf-handbook;
+    font-weight: 400;
+    font-size: 60px;
+    color: #333;
+  }
+
+  .glide__arrows {
+    position: absolute;
+    right: 3px;
+    top: -52px;
+    width: 60px;
+    height: 30px;
+  }
+
+  .glide__arrow {
+    top: 0;
+    border: none;
+    padding: 0;
+    width: 20px;
+    height: 31px;
+    box-shadow: none;
+    transform: none;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--left {
+      left: auto;
+      right: 0;
+    }
+
+    &--right {
+      left: 0;
+      right: auto;
+    }
+  }
+}
+
+.hits-item {
+  position: relative;
+  width: 100%;
+
+  &__pic {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+    width: 100%;
+    height: 320px;
+
+    img {
+      height: auto;
+      max-width: 100%;
+      transition: transform 0.3s;
+    }
+
+    @media (min-width: 1025px) {
+      &:hover,
+      &:focus {
+        img {
+          transform: scale(1.1);
+          transition: transform 0.3s;
+        }
+      }
+    }
+  }
+
+  &__name {
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 18px;
+    white-space: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+    color: #707070;
+  }
+
+  &__price {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+  }
+
+  &__to-basket {
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 2px solid transparent;
+    border-radius: 40px;
+    padding: 7px 25px;
+    max-width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: center;
+    color: $color-white;
+    background-color: $color-limeade;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+
+    @media (min-width: 1025px) {
+      &:hover,
+      &:focus {
+        border-color: $color-limeade;
+        color: $color-limeade;
+        background-color: transparent;
+        transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+      }
+    }
+  }
+}

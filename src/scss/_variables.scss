@@ -4,10 +4,14 @@
 
 $color-black: #000;
 $color-white: #fff;
+$color-atlantis: #85cd32;
+$color-jewel: #186a47;
+$color-green-pea: #1a6949;
+$color-limeade: #68ac02;
 
 // FONTS
 
-$font-default: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+$font-default: "Open Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
 $font-calibri: "Calibri", $font-default;
 $font-din-pro: "DIN Pro", $font-default;
 $font-din-pro-cond: "DIN Pro Cond", $font-default;

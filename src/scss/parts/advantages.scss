@@ -1,0 +1,96 @@
+@import "../variables";
+
+.advantages {
+  position: relative;
+
+  .section-title {
+    margin-top: 54px;
+  }
+
+  &__wrapper {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 37.5%);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 47px;
+    background-image: url("../images/balerine.png");
+    background-position: 48.5% 46%;
+    background-repeat: no-repeat;
+  }
+}
+
+.advantages-item {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  &__pic {
+    position: relative;
+    border: 1px solid #a1db49;
+    padding: 7px;
+    width: 78px;
+    height: 78px;
+    box-shadow: 5px 5px 0 #d1eddc, -5px -5px 0 #e6f8cc;
+    background-color: $color-white;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    margin: 10px 0;
+    margin-top: 17px;
+    font-family: $font-pf-handbook;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-jewel;
+  }
+
+  &__descr {
+    overflow: hidden;
+    margin: 0;
+    max-height: 105px;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: center;
+    color: #333;
+  }
+
+  &__dot {
+    position: absolute;
+    top: 55%;
+
+    &--bottom {
+      top: auto;
+      bottom: 53%;
+    }
+
+    &--left {
+      right: -300px;
+    }
+
+    &--right {
+      left: -300px;
+    }
+
+    &--center {
+      right: -220px;
+
+      &.advantages-item__dot--right {
+        left: -220px;
+      }
+    }
+  }
+}

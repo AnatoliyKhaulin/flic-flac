@@ -1,0 +1,74 @@
+header.main-header
+  .main-header__top
+    .container
+      nav.top-nav
+        ul.top-nav__list
+          each item in ['Вопрос-ответ', 'Доставка и оплата', 'Размеры', 'Отзывы']
+            li.top-nav__item
+              a.top-nav__link(href="#")
+                | #{item}
+
+      nav.social-nav
+        ul.social-nav__list
+          each item in ['ic-vk', 'ic-inst', 'ic-ok', 'ic-fb']
+            li.social-nav__item
+              a.social-nav__link(href="#")
+                +svg(`${item}`)(class=`social-nav__ic social-nav__${item}`)
+
+      form.sign-form(action="/")
+        a.sign-form__link(href="#")
+          | Вход
+        a.sign-form__link(href="#")
+          | Регистрация
+
+  .main-header__middle
+    .container
+      a.header-logo(href="#")
+        .header-logo__pic
+          img(src=`${baseDir}images/logo_green.png` srcset=`${baseDir}images/logo_green@2x.png` alt="")
+
+        .header-logo__text
+          h2.header-logo__title
+            | Флик Фляк
+          p.header-logo__descr
+            | Интернет-магазин специализированных товаров для всех направлений танцев, художественной гимнастики и активного образа жизни
+
+      ul.header-contacts
+        li.header-contacts__item
+          +svg('ic_clock')
+          strong
+            | Пн-Пт 11:00 - 20:00
+          strong
+            | Сб-Вс 11:00 - 18:00
+        li.header-contacts__item
+          +svg('ic_phone')
+          strong
+            | 8 (981) 104 77 30
+          strong
+            a(href="#")
+              | Заказать звонок
+        li.header-contacts__item
+          +svg('ic_email')
+          strong
+            | E-mail:
+          strong
+            a(href="#")
+              | flicflac.ira@mail.ru
+
+      form.main-header__form(action="/")
+        .search-field
+          input(type="search" name="headerSearch" placeholder="Поиск")
+          +svg('search')
+        .header-cart
+          a.header-cart__link(href="#")
+            +svg('ic_cart')
+          strong.header-cart__price
+            | 2573,00 р.
+          span
+            | 2 товара
+
+  .main-header__bottom
+    .container
+      nav.main-nav
+        ul.main-nav__list
+          +main-nav(navContent)

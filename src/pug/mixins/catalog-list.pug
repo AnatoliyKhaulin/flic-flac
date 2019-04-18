@@ -1,0 +1,15 @@
+mixin catalog-list(data)
+  .container
+    .catalog-list
+      each item in data.items
+        .catalog-list__item
+          .catalog-list__pic
+            img(src=item.imageSrc srcset=item.imageSrcX2 alt=item.itemTitle)
+
+          a.catalog-list__title(href="#")
+            | !{item.itemTitle}
+
+          ul.catalog-list__list
+            each listItem in item.listItems
+              li
+                a(href='#')=listItem

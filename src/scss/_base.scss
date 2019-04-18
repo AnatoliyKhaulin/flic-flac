@@ -1,9 +1,74 @@
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $font-default;
+  font-size: 16px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.section-title {
+  margin: 0 auto;
+  margin-top: 62px;
+  width: 100%;
+  max-width: 1400px;
+  font-family: $font-pf-handbook;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-limeade;
+
+  span {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: 40%;
+      border-radius: 50%;
+      width: 9px;
+      height: 9px;
+      background-color: $color-limeade;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -15px;
+      top: 40%;
+      border-radius: 50%;
+      width: 9px;
+      height: 9px;
+      background-color: $color-limeade;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.vertical-image {
+  width: auto;
+  max-height: 100%;
+}
+
+.horizontal-image {
+  height: auto;
+  max-width: 100%;
 }

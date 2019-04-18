@@ -1,0 +1,220 @@
+.main-footer {
+  position: relative;
+
+  &__top {
+    padding-bottom: 12px;
+
+    .container {
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-start;
+      padding-top: 28px;
+      padding-left: 25px;
+    }
+  }
+
+  &__bottom {
+    padding: 15px 0;
+    border-top: 1px solid #333;
+
+    p {
+      margin: 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #333333;
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 12px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #333;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        width: 100%;
+        height: 1px;
+        background-color: #333;
+        transition: left 0.3s, width 0.3s;
+      }
+
+      @media (min-width: 1025px) {
+        &:hover,
+        &:focus {
+          &::after {
+            left: 50%;
+            width: 0;
+            transition: left 0.3s, width 0.3s;
+          }
+        }
+      }
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.footer-logo {
+  margin-top: 5px;
+  margin-right: 30px;
+  width: 119px;
+  height: 101px;
+}
+
+.footer-nav {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    margin-right: 70px;
+    padding: 0;
+
+    &:first-child {
+      margin-right: 85px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #333;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -1px;
+      width: 0;
+      height: 1px;
+      background-color: #333;
+      transition: left 0.3s, width 0.3s;
+    }
+
+    @media (min-width: 1025px) {
+      &:hover,
+      &:focus {
+        &::after {
+          left: 0;
+          width: 100%;
+          transition: left 0.3s, width 0.3s;
+        }
+      }
+    }
+  }
+}
+
+.footer-adreses {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    position: relative;
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 1.3;
+    color: #333;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 10%;
+      width: 1px;
+      height: 80%;
+      background-color: $color-limeade;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+.footer-contacts {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  margin-left: auto;
+  min-height: 100%;
+
+  &__phone {
+    display: block;
+    font-family: $font-pf-handbook;
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+
+    span {
+      font-size: 18px;
+      color: $color-limeade;
+      transition: font-size 0.2s;
+    }
+
+    @media (min-width: 1025px) {
+      &:hover,
+      &:focus {
+        span {
+          font-size: 24px;
+          transition: font-size 0.2s;
+        }
+      }
+    }
+  }
+
+  &__callback {
+    display: block;
+    margin-top: 5px;
+    border: 2px solid transparent;
+    border-radius: 40px;
+    padding: 5px 20px;
+    font-family: $font-pf-handbook;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-white;
+    background-color: $color-jewel;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+
+    @media (min-width: 1025px) {
+      &:hover,
+      &:focus {
+        border-color: $color-jewel;
+        color: $color-jewel;
+        background-color: transparent;
+        transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+      }
+    }
+  }
+
+  .social-nav {
+    margin-top: auto;
+    margin-bottom: 11px;
+  }
+}

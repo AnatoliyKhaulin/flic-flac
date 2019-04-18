@@ -1,0 +1,56 @@
+section.hits
+  .container
+    h2.hits__title
+      | Хиты продаж
+    .glide.glide--triple
+      .glide__track(data-glide-el="track")
+        ul.glide__slides
+          li.glide__slide
+            .hits-item
+              a.hits-item__pic(href="#")
+                img(src=`${baseDir}images/hits_1.jpg` srcset="" alt=`${baseDir}images/hits_1@2x.jpg`)
+              h5.hits-item__name
+                | Гимнастический купальник Альера
+              p.hits-item__price
+                | #[span 1 550] руб.
+              button.hits-item__to-basket
+                | В корзину
+
+          li.glide__slide
+            .hits-item
+              a.hits-item__pic(href="#")
+                img(src=`${baseDir}images/hits_2.jpg` srcset="" alt=`${baseDir}images/hits_1@2x.jpg`)
+              h5.hits-item__name
+                | Платье Юлианна
+              p.hits-item__price
+                | #[span 5 600] руб.
+              button.hits-item__to-basket
+                | В корзину
+
+          li.glide__slide
+            .hits-item
+              a.hits-item__pic(href="#")
+                img(src=`${baseDir}images/hits_3.jpg` srcset="" alt=`${baseDir}images/hits_1@2x.jpg`)
+              h5.hits-item__name
+                | Пояс разогревочный трикотаж детский
+              p.hits-item__price
+                | #[span 650] руб.
+              button.hits-item__to-basket
+                | В корзину
+
+          li.glide__slide
+            .hits-item
+              a.hits-item__pic(href="#")
+                img(src=`${baseDir}images/hits_2.jpg` srcset="" alt=`${baseDir}images/hits_1@2x.jpg`)
+              h5.hits-item__name
+                | Платье Юлианна
+              p.hits-item__price
+                | #[span 15 000] руб.
+              button.hits-item__to-basket
+                | В корзину
+
+      .glide__arrows(data-glide-el="controls")
+        button.glide__arrow.glide__arrow--left(data-glide-dir="<")
+          +svg('arrow_right')
+        button.glide__arrow.glide__arrow--right(data-glide-dir=">")
+          +svg('arrow_left')

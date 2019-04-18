@@ -1,0 +1,38 @@
+section.contacts
+  .container
+    .contacts__info
+      h2.contacts__title
+        | Наши магазины
+      ul.contacts-list
+        li.contacts-list__item
+          a.contacts-list__link(href='#')
+            +svg('flac_location')
+            span
+              | «ФЛИК ФЛЯК» КУПЧИНО:
+          p.contacts-list__adress
+            | 192284, Санкт-Петербург, ул. Купчинская, 4 (корп. 4)
+            br
+            | Тел: 8 (981) 104 77 30
+
+        li.contacts-list__item
+          a.contacts-list__link(href='#')
+            +svg('flac_location')
+            span
+              | «ФЛИК ФЛЯК» ОЗЕРКИ:
+          p.contacts-list__adress
+            | 192284, Санкт-Петербург, пр. Энгельса 98
+            br
+            | Тел: 8 (981) 104 77 29
+
+        li.contacts-list__item
+          a.contacts-list__link(href='#')
+            +svg('flac_location')
+            span
+              | «ФЛИК ФЛЯК» ВАСИЛЕОСТРОВСКАЯ:
+          p.contacts-list__adress
+            | метро Василеостровская, 16 линия В.О. д. 45
+            br
+            | Тел: 8 (911) 104 77 35
+    .contacts__video
+      iframe(width="560" height="315" src="https://www.youtube.com/embed/iN7XcLSmshs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+  #contactsMap.contacts__map

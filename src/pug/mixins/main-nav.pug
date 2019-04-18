@@ -1,0 +1,13 @@
+mixin main-nav(data)
+	ul.main-nav__list(class!=attributes.class)&attributes(attributes)
+		each item in data.items
+			li.main-nav__item
+				a.main-nav__link.js-nav-link(href="#" class=item.dropdownClass aria-label=item.textLink)
+					| !{item.textLink}
+
+				if item.dropdown
+					ul.main-nav__dropdown
+						each dropdownItem in item.dropdown
+							li.main-nav__dropdown-item
+								a.main-nav__dropdown-link.js-nav-link(href="#" aria-label=dropdownItem.textLinkDropdown)
+									| !{dropdownItem.textLinkDropdown}
