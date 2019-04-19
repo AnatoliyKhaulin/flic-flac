@@ -12,6 +12,10 @@
     font-weight: 400;
     font-size: 60px;
     color: #333;
+
+    @media (max-width: 490px) {
+      font-size: 60 / 490 * 100vw;
+    }
   }
 
   .glide__arrows {

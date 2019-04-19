@@ -13,6 +13,7 @@
       position: relative;
       width: 100%;
       height: 100%;
+      overflow: hidden;
 
       img {
         position: absolute;
@@ -22,6 +23,25 @@
         bottom: 0;
         width: 100%;
         height: 100%;
+
+        @media (max-width: 767px) {
+          width: 150%;
+          max-width: none;
+          transform: translateX(-10%);
+        }
+
+        @media (max-width: 490px) {
+          width: 160%;
+        }
+      }
+
+      .container {
+        @media (max-width: 767px) {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding-bottom: 10%;
+        }
       }
     }
 
@@ -50,6 +70,38 @@
       font-size: 40px;
       line-height: 1.1;
       color: $color-jewel;
+
+      @media (max-width: 1200px) {
+        font-size: 40 / 1400 * 100vw;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 40 / 768 * 100vw;
+      }
     }
+
+    @media (max-width: 1200px) {
+      max-width: 671 / 1400 * 100vw;
+      font-size: 30 / 1400 * 100vw;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: auto;
+      margin-bottom: auto;
+      max-width: 100%;
+      font-size: 30 / 768 * 100vw;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    height: 380 / 1024 * 100vw;
+  }
+
+  @media (max-width: 767px) {
+    height: 420 / 768 * 100vw;
+  }
+
+  @media (max-width: 490px) {
+    height: 320 / 490 * 100vw;
   }
 }

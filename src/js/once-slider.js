@@ -1,11 +1,15 @@
 import Glide from '@glidejs/glide';
 
-let glide = new Glide('.glide--single', {
-  type: 'carousel',
-  autoplay: 6000,
-  hoverpause: false,
-  animationDuration: 1000,
-  animationTimingFunc: 'ease-in-out',
-});
+let onceSliderContainer = document.querySelector('.glide--single');
 
-glide.mount();
+if (onceSliderContainer !== null) {
+  let glide = new Glide(onceSliderContainer, {
+    type: 'carousel',
+    autoplay: 6000,
+    hoverpause: false,
+    animationDuration: 1000,
+    animationTimingFunc: 'ease-in-out',
+  });
+
+  glide.mount();
+}

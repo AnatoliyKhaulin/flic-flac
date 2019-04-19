@@ -1,6 +1,12 @@
 header.main-header
   .main-header__top
     .container
+      button.main-header__burger-btn.js-burger-btn
+        span.main-header__burger
+          span.main-header__burger-topper
+          span.main-header__burger-bottom
+          span.main-header__burger-footer
+
       nav.top-nav
         ul.top-nav__list
           each item in ['Вопрос-ответ', 'Доставка и оплата', 'Размеры', 'Отзывы']
@@ -62,12 +68,13 @@ header.main-header
         .header-cart
           a.header-cart__link(href="#")
             +svg('ic_cart')
-          strong.header-cart__price
-            | 2573,00 р.
-          span
-            | 2 товара
+          .header-cart__price
+            strong
+              | 2573,00 р.
+            span
+              | 2 товара
 
-  .main-header__bottom
+  .main-header__bottom.js-top-header-nav-list
     .container
       nav.main-nav
         ul.main-nav__list
