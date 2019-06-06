@@ -2,13 +2,12 @@ let adressCordOne = [59.844050, 30.386979];
 let adressCordTwo = [60.026132, 30.317916];
 let adressCordThree = [59.940271, 30.265374];
 
+let indexMap = document.querySelector('#contactsMap');
 let contactsAdressOne = document.querySelector('#contactsAdressOne');
 let contactsAdressTwo = document.querySelector('#contactsAdressTwo');
 let contactsAdressThree = document.querySelector('#contactsAdressThree');
 
 function init() {
-
-  // Карта первая вкладка
 
   let contactsMap = new ymaps.Map("contactsMap", {
     center: adressCordOne,
@@ -109,4 +108,6 @@ function init() {
   });
 }
 
-ymaps.ready(init);
+if(indexMap) {
+  ymaps.ready(init);
+}

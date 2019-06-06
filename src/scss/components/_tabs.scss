@@ -1,0 +1,38 @@
+.tabs {
+  position: relative;
+
+  &__controls {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+
+  &__content {
+    @include visually-hidden;
+
+    > * {
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    &.is-active {
+      position: relative;
+      overflow: visible;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      clip: auto;
+
+      > * {
+        opacity: 1;
+        transition: opacity 0.5s;
+      }
+    }
+  }
+}

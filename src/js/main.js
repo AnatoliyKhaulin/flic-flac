@@ -4,5 +4,6 @@ import './dropdown-menu';
 import './once-slider';
 import './catalog';
 import './triple-slider';
+import './fives-slider';
 import './contacts-map';
-
+import './tabs';

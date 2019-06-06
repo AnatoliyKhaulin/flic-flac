@@ -1,0 +1,38 @@
+mixin catalogItems(data)
+	.catalog-items
+		each item in data.items
+			.catalog-item
+				a.catalog-item__pic(href="#")
+					img(src=item.imgSrc srcset=item.imgSrcX2 alt=item.name)
+					if item.type
+						if item.type == 'Акция'
+							.catalog-item__type.catalog-item__type--action
+								| !{item.type}
+
+						else if item.type == 'Новинка'
+							.catalog-item__type.catalog-item__type--new
+								| !{item.type}
+
+						else if item.type == 'Хит продаж'
+							.catalog-item__type.catalog-item__type--hit
+								| !{item.type}
+
+				footer.catalog-item__footer
+					.catalog-item__name
+						p.name
+							| !{item.name}
+						p.articul
+							| !{item.articul}
+
+					.catalog-item__price
+						if item.priceOld
+							.price.price--old
+								| !{item.priceOld}
+						.price
+							| !{item.price}
+
+				.catalog-item__buttons
+					+btn('fill')
+						| Купить
+					+btn('border')
+						| Купить в 1 клик

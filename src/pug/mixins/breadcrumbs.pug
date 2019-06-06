@@ -1,0 +1,12 @@
+mixin breadcrumbs(data)
+	nav.breadcrumbs
+		.container
+			ul.breadcrumbs__list
+				each item in data.items
+					if(item.last)
+						li.breadcrumbs__item.breadcrumbs__item--last
+							| !{item.text}
+					else
+						li.breadcrumbs__item
+							a.breadcrumbs__link(href="#")
+								| !{item.text}

@@ -1,0 +1,86 @@
+extends pug/base
+
+prepend vars
+  - title = 'РЕЙТИНГОВОЕ ПЛАТЬЕ ИЗ САТИН-ВЕЛЬВЕТА  - Флик Фляк'
+
+append vars
+  - link.appleTouchIcon = `${baseDir}favicon/apple-icon.png`
+  - link.appleTouchIcon57x57 = `${baseDir}favicon/apple-icon-57x57.png`
+  - link.appleTouchIcon60x60 = `${baseDir}favicon/apple-icon-60x60.png`
+  - link.appleTouchIcon72x72 = `${baseDir}favicon/apple-icon-72x72.png`
+  - link.appleTouchIcon76x76 = `${baseDir}favicon/apple-icon-76x76.png`
+  - link.appleTouchIcon114x114 = `${baseDir}favicon/apple-icon-114x114.png`
+  - link.appleTouchIcon120x120 = `${baseDir}favicon/apple-icon-120x120.png`
+  - link.appleTouchIcon144x144 = `${baseDir}favicon/apple-icon-144x144.png`
+  - link.appleTouchIcon152x152 = `${baseDir}favicon/apple-icon-152x152.png`
+  - link.appleTouchIcon180x180 = `${baseDir}favicon/apple-icon-180x180.png`
+  - link.appleTouchIconPrecomposed = `${baseDir}favicon/apple-icon-precomposed.png`
+  - link.icon = `${baseDir}favicon/favicon.ico`
+  - link.icon16x16 = `${baseDir}favicon/favicon-16x16.png`
+  - link.icon32x32 = `${baseDir}favicon/favicon-32x32.png`
+  - link.icon96x96 = `${baseDir}favicon/favicon-96x96.png`
+  - linkCssAttrs = [`${baseDir}css/social-nav.css`, `${baseDir}css/forms.css`, `${baseDir}css/main-nav.css`, `${baseDir}css/promo.css`, `${baseDir}css/catalog.css`, `${baseDir}css/advantages.css`, `${baseDir}css/hits.css`, `${baseDir}css/contacts.css`]
+  - linkJsAttrs = ['//api-maps.yandex.ru/2.1/?lang=ru_RU']
+  -
+    var navContent = {'items':[
+    {
+    'textLink': 'О НАС',
+    'dropdownClass': 'js-nav-dropdown-link active',
+    'dropdown': [
+    {
+    'textLinkDropdown': 'О компании',
+    },
+    {
+    'textLinkDropdown': 'Новости',
+    },
+    {
+    'textLinkDropdown': 'Статьи',
+    },
+    {
+    'textLinkDropdown': 'Вакансии',
+    },
+    {
+    'textLinkDropdown': 'Фотогалерея',
+    }
+    ]
+    },
+    {
+    'textLink': 'КАТАЛОГ'
+    },
+    {
+    'textLink': 'РАСПРОДАЖА'
+    },
+    {
+    'textLink': 'КОЛЛЕКТИВАМ'
+    },
+    {
+    'textLink': 'АКЦИИ'
+    },
+    {
+    'textLink': 'КОНТАКТЫ'
+    }
+    ]}
+  -
+    var breadcrumbsContent = {'items':[
+    {
+    'text': 'Главная'
+    },
+    {
+    'text': 'Каталог'
+    },
+    {
+    'text': 'Одежда для бальных танцев',
+    'last': true
+    }
+    ]}
+block content
+  include pug/parts/main-header
+  +breadcrumbs(breadcrumbsContent)
+  section.catalog
+    .container
+      h2.inner-page-title
+        span Рейтинговые платья
+      form.catalog__inner(action="/")
+        include pug/components/catalog-sidebar
+        include pug/components/product-details
+  include pug/parts/main-footer

@@ -1,3 +1,6 @@
+@import "../variables";
+@import "../mixins";
+
 .search-field {
   position: relative;
   overflow: hidden;
@@ -53,5 +56,31 @@
 
   @media (max-width: 1023px) {
     max-width: 175px;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  span {
+    margin-right: 10px;
+    width: fit-content;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  input {
+    border: 1px solid $color-alto;
+    border-radius: 0;
+    padding: 4px;
+    width: 100%;
+  }
+
+  &--checkbox {
+    input[type="checkbox"] {
+      @include visually-hidden;
+    }
   }
 }

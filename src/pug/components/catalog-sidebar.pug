@@ -1,0 +1,151 @@
+-
+	var sidebarNav = {'items':[
+	{
+	'text': 'Одежда для гимнастики, балета и хореографии'
+	},
+	{
+	'text': 'Одежда для бальных танцев',
+	'dropdown': [
+	{
+	'text': 'Аксессуары для бальных танцев',
+	'num': '9'
+	},
+	{
+	'text': 'Брюки для мальчиков',
+	'num': '4'
+	},
+	{
+	'text': 'Платья для латины',
+	'num': '11'
+	},
+	{
+	'text': 'Рейтинговые платья',
+	'num': '51'
+	},
+	{
+	'text': 'Рубашки для мальчиков',
+	'num': '9'
+	},
+	{
+	'text': 'Топы, боди',
+	'num': '16'
+	},
+	{
+	'text': 'Юбки, брюки',
+	'num': '29'
+	}
+	]
+	},
+	{
+	'text': 'Косметика и аксессуары для волос'
+	},
+	{
+	'text': 'Обувь'
+	},
+	{
+	'text': 'Разогрев'
+	},
+	{
+	'text': 'Сумки, кофры и т.д.'
+	},
+	{
+	'text': 'Предметы для гимнастики и спорта'
+	},
+	{
+	'text': 'Распродажа'
+	},
+	{
+	'text': 'Пошив на заказ'
+	}
+	]}
+aside.catalog-sidebar
+	nav.catalog-sidebar__nav
+		ul.sidebar-list
+			each item in sidebarNav.items
+				li.sidebar-list__item.js-sidebar-nav-link
+					a.sidebar-list__link(href="#")
+						| !{item.text}
+						+svg('arrow_right').sidebar-list__arrow
+					if(item.dropdown)
+						ul.sidebar-list.sidebar-list--dropdown.js-sidebar-nav-dropdown
+							each itemDrop in item.dropdown
+								li.sidebar-list__item
+									a.sidebar-list__link(href="#") !{itemDrop.text}
+										span &nbsp;!{itemDrop.num}
+	.catalog-sidebar__filter
+		.sidebar-filter
+			header.sidebar-filter__header
+				h3
+					| Фильтр
+					.sprite-ic_filter
+				button(type='reset')
+					| очистить
+		.sidebar-filter__fields
+			.sidebar-filter__field
+				h5
+					| Цена
+				label.form-field
+					span
+						| от:
+					input(type='text' name='')
+				label.form-field
+					span
+						| до:
+					input(type='text' name='')
+			.sidebar-filter__field
+				h5
+					| Каблук
+				label.form-field
+					span
+						| от:
+					input(type='text' name='')
+				label.form-field
+					span
+						| до:
+					input(type='text' name='')
+			.sidebar-filter__field
+				h5
+					| Цвет
+				select.select-colors
+					option
+						| выберите цвет
+					option
+						| Алый
+					option
+						| Амарантово-пурпурный
+					option
+						| Амарантово-розовый
+					option
+						| Амарантовый
+					option
+						| Американский
+					option
+						| Аметистовый
+			.sidebar-filter__field
+				h5
+					| Размер
+				.sidebar-filter__sizes
+					each item in ['6 / 116', '7 / 122', '8 / 128', '9 / 134', '10 / 140', '11 / 146', '12 / 152', '13 / 158', '14 / 164', 'One size', '32/XXS', '34/XS', '36/S', '38/M', '40/L']
+						label.form-field.form-field--checkbox
+							input(type='checkbox' name='checkboxSize' value=item)
+							span
+								| !{item}
+			footer.sidebar-filter__footer
+				.sidebar-filter__choicen
+					.sidebar-filter__result
+						span
+							| фуксия
+						span.close.js-del-result-filter
+							| +
+					.sidebar-filter__result
+						span
+							| One size
+						span.close.js-del-result-filter
+							| +
+					.sidebar-filter__result
+						span
+							| 3-5 см
+						span.close.js-del-result-filter
+							| +
+				+btn('fill').sidebar-filter__show
+					| Показать #[span.js-result-num (38)]

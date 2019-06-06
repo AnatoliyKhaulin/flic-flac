@@ -1,4 +1,25 @@
-$sprites: ();
+$sprites: (
+	"ic_filter": (
+		normal: (
+			x: 0,
+			y: 0,
+			width: 16,
+			height: 10,
+			image: "sprites.png",
+			total_width: 16,
+			total_height: 10,
+		),
+		retina: (
+			x: 0,
+			y: 0,
+			width: 32,
+			height: 20,
+			image: "sprites@2x.png",
+			total_width: 32,
+			total_height: 20,
+		),
+	),
+);
 
 @each $name in map-keys($sprites) {
 	.sprite-#{$name} {

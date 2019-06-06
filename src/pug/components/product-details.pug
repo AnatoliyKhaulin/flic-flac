@@ -1,0 +1,170 @@
+section.product-details
+  .product-details__item
+    .product-pictures#lightgallery
+      .product-pictures__big(data-src=`${baseDir}images/products/product_image_1@2x.jpg`)
+        img(src=`${baseDir}images/products/product_image_1.jpg` srcset=`${baseDir}images/products/product_image_1@2x.jpg` alt='')
+        .product-pictures__action
+          | Акция
+      .product-pictures__small(data-src=`${baseDir}images/products/product_image_2@2x.jpg`)
+        img(src=`${baseDir}images/products/product_image_2.jpg` srcset=`${baseDir}images/products/product_image_2@2x.jpg` alt='')
+      .product-pictures__small(data-src=`${baseDir}images/products/product_image_3@2x.jpg`)
+        img(src=`${baseDir}images/products/product_image_3.jpg` srcset=`${baseDir}images/products/product_image_3@2x.jpg` alt='')
+    .product-info
+      h2.product-info__title
+        | РЕЙТИНГОВОЕ ПЛАТЬЕ ИЗ САТИН-ВЕЛЬВЕТА
+      .product-info__price
+        span.price
+          | 7 100 #[span.rub руб]
+        span.price.price--old
+          | 7 400
+      ul.product-info__params
+        li
+          span.name
+            | Артикул:
+          span.param
+            | 7040650
+        li
+          span.name
+            | Цвет:
+          span.param
+            | фуксия
+        li
+          span.name
+            | Состав:
+          span.param
+            | полиамид 100%
+        li
+          span.name
+            | Бренд:
+          span.param
+            | Fashion
+        li.select-color
+          span.name
+            | Выберите цвет:
+          select.select-colors
+            option
+              | выберите цвет
+            option
+              | Алый
+            option
+              | Амарантово-пурпурный
+            option
+              | Амарантово-розовый
+            option
+              | Амарантовый
+            option
+              | Американский
+            option
+              | Аметистовый
+      .product-info__sizes
+        h3
+          | Размер
+        .sidebar-filter__sizes
+          each item in ['32/XXS', '34/XS', '36/S', '38/M', '40/L']
+            label.form-field.form-field--checkbox
+              input(type='checkbox' name='checkboxSize' value=item)
+              span
+                | !{item}
+        a.product-info__open-table(href='#')
+          | Таблица размеров
+        .product-info__footer
+          .form-field
+            span
+              | Количество:
+            select
+              option
+                | 1
+              option
+                | 2
+              option
+                | 3
+            .total-price
+              | 14 200 руб.
+        .product-info__buttons
+          +btn('fill')
+            | Купить
+          +btn('border')
+            | Купить в 1 клик
+  .product-details__tabs
+    .tabs
+      ul.tabs__controls
+        li.tabs__link.is-active(data-target='optionsTab')
+          | Характеристика
+        li.tabs__link(data-target='deliveryTab')
+          | Доставка и оплата
+      .tabs__inner
+        #optionsTab.tabs__content.is-active
+          h5
+            | #[strong Фасон:] боди+юбка
+            ul
+              li
+                | рукав 3/4
+              li
+                | юбка 1.5 солнца
+          p
+            | Рейтинговые платья из нереально красивого материала сатин-вельвет! Платье выполнено из отдельного боди и юбки на поясе. Низ юбки оформлен регилином.
+          p
+            | ПОД ЗАКАЗ ВЫПОЛНИМ В ЛЮБОМ ЦВЕТЕ И РАЗМЕРЕ ПАЛИТРА ЦВЕТОВ И ОБРАЗЦОВ ТКАНИ ПРЕДСТАВЛЕНА ВО ВСЕХ МАГАЗИНАХ‼ ЖДЁМ ВАС НА ПРИМЕРКУ ВСЕ ПЛАТЬЯ ВЫПОЛНЕНЫ В СООТВЕТСТВИИ С ПРАВИЛАМИ ТАНЦЕВАЛЬНОГО КОСТЮМА.
+        #deliveryTab.tabs__content
+          p
+            | Нет контента
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis, eaque earum incidunt iste laboriosam nam nemo neque perspiciatis possimus reprehenderit, tenetur vel velit vitae, voluptatum. Cum libero non suscipit.
+  footer.product-details__footer
+    h3
+      | С этим товаром покупают
+    .product-details-slider
+      .glide.glide--fives
+        .glide__track(data-glide-el="track")
+          ul.glide__slides
+            li.glide__slide
+              .product-details-slider__item
+                a.product-details-slider__pic(href="#")
+                  img(src=`${baseDir}images/products/products_slider_item_1.jpg` srcset=`${baseDir}images/products/products_slider_item_1@2x.jpg` alt=``)
+                h5.product-details-slider__name
+                  | Рейтинговое платье
+                  | из сатин-вельвета
+                p.product-details-slider__price
+                  | 7 100 руб.
+
+            li.glide__slide
+              .product-details-slider__item
+                a.product-details-slider__pic(href="#")
+                  img(src=`${baseDir}images/products/products_slider_item_2.jpg` srcset=`${baseDir}images/products/products_slider_item_2@2x.jpg` alt=``)
+                h5.product-details-slider__name
+                  | Платье Юлианна
+                p.product-details-slider__price
+                  | 5 600 руб.
+
+            li.glide__slide
+              .product-details-slider__item
+                a.product-details-slider__pic(href="#")
+                  img(src=`${baseDir}images/products/products_slider_item_3.jpg` srcset=`${baseDir}images/products/products_slider_item_3@2x.jpg` alt=``)
+                h5.product-details-slider__name
+                  | Платье “Таисия”
+                p.product-details-slider__price
+                  | 3 200 руб.
+
+            li.glide__slide
+              .product-details-slider__item
+                a.product-details-slider__pic(href="#")
+                  img(src=`${baseDir}images/products/products_slider_item_4.jpg` srcset=`${baseDir}images/products/products_slider_item_4@2x.jpg` alt=``)
+                h5.product-details-slider__name
+                  | Джазовки-балетки
+                  | на каблуке
+                p.product-details-slider__price
+                  | 1 100 руб.
+
+            li.glide__slide
+              .product-details-slider__item
+                a.product-details-slider__pic(href="#")
+                  img(src=`${baseDir}images/products/products_slider_item_5.jpg` srcset=`${baseDir}images/products/products_slider_item_5@2x.jpg` alt=``)
+                h5.product-details-slider__name
+                  | Юбка-солнце из шифона
+                p.product-details-slider__price
+                  | 650 руб.
+
+        .glide__arrows(data-glide-el="controls")
+          button.glide__arrow.glide__arrow--left(data-glide-dir="<")
+            +svg('arrow_left')
+          button.glide__arrow.glide__arrow--right(data-glide-dir=">")
+            +svg('arrow_right')

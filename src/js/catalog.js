@@ -17,3 +17,23 @@ if (/Mobi/.test(navigator.userAgent)) {
     });
   }
 }
+
+
+let $catalogSidebarNavLink = $('.js-sidebar-nav-link');
+
+$catalogSidebarNavLink.on('click', (e) => {
+  let $this = $(e.currentTarget);
+  let dropdownMenu = $this.find('.js-sidebar-nav-dropdown');
+
+  if (dropdownMenu.length > 0) {
+    e.preventDefault();
+  }
+
+  if(!$this.hasClass('open') && dropdownMenu.length > 0) {
+    $this.addClass('open');
+    dropdownMenu.addClass('open');
+  } else {
+    $this.removeClass('open');
+    dropdownMenu.removeClass('open');
+  }
+});

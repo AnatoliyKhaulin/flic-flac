@@ -1,6 +1,8 @@
 import '@babel/polyfill';
 import svg4everybody from 'svg4everybody';
 import $ from 'jquery';
+import 'jquery-custom-select';
+import 'lightgallery.js';
 
 svg4everybody();
 
@@ -17,3 +19,9 @@ for (let image of images) {
   }
 }
 
+$('select').customSelect({
+  includeValue: true,
+  transition: 100
+});
+
+lightGallery(document.getElementById('lightgallery'));

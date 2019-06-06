@@ -12,6 +12,7 @@ body {
   min-height: 100vh;
   font-family: $font-default;
   font-size: 16px;
+  color: $color-black;
 }
 
 .container {
@@ -89,6 +90,13 @@ body {
     margin-bottom: 20px;
     font-size: 52 / 490 * 100vw;
   }
+}
+
+.inner-page-title {
+  margin: 0.55em 0;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
 }
 
 .vertical-image {
