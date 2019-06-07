@@ -1,0 +1,168 @@
+extends pug/base
+
+prepend vars
+  - title = 'Доставка и оплата - Флик Фляк'
+
+append vars
+  - link.appleTouchIcon = `${baseDir}favicon/apple-icon.png`
+  - link.appleTouchIcon57x57 = `${baseDir}favicon/apple-icon-57x57.png`
+  - link.appleTouchIcon60x60 = `${baseDir}favicon/apple-icon-60x60.png`
+  - link.appleTouchIcon72x72 = `${baseDir}favicon/apple-icon-72x72.png`
+  - link.appleTouchIcon76x76 = `${baseDir}favicon/apple-icon-76x76.png`
+  - link.appleTouchIcon114x114 = `${baseDir}favicon/apple-icon-114x114.png`
+  - link.appleTouchIcon120x120 = `${baseDir}favicon/apple-icon-120x120.png`
+  - link.appleTouchIcon144x144 = `${baseDir}favicon/apple-icon-144x144.png`
+  - link.appleTouchIcon152x152 = `${baseDir}favicon/apple-icon-152x152.png`
+  - link.appleTouchIcon180x180 = `${baseDir}favicon/apple-icon-180x180.png`
+  - link.appleTouchIconPrecomposed = `${baseDir}favicon/apple-icon-precomposed.png`
+  - link.icon = `${baseDir}favicon/favicon.ico`
+  - link.icon16x16 = `${baseDir}favicon/favicon-16x16.png`
+  - link.icon32x32 = `${baseDir}favicon/favicon-32x32.png`
+  - link.icon96x96 = `${baseDir}favicon/favicon-96x96.png`
+  - linkCssAttrs = [`${baseDir}css/social-nav.css`, `${baseDir}css/forms.css`, `${baseDir}css/main-nav.css`]
+  - linkJsAttrs = ['']
+  -
+    var navContent = {'items':[
+    {
+    'textLink': 'О НАС',
+    'dropdownClass': 'js-nav-dropdown-link active',
+    'dropdown': [
+    {
+    'textLinkDropdown': 'О компании',
+    },
+    {
+    'textLinkDropdown': 'Новости',
+    },
+    {
+    'textLinkDropdown': 'Статьи',
+    },
+    {
+    'textLinkDropdown': 'Вакансии',
+    },
+    {
+    'textLinkDropdown': 'Фотогалерея',
+    }
+    ]
+    },
+    {
+    'textLink': 'КАТАЛОГ'
+    },
+    {
+    'textLink': 'РАСПРОДАЖА'
+    },
+    {
+    'textLink': 'КОЛЛЕКТИВАМ'
+    },
+    {
+    'textLink': 'АКЦИИ'
+    },
+    {
+    'textLink': 'КОНТАКТЫ'
+    }
+    ]}
+
+    var breadcrumbsContent = {'items':[
+    {
+    'text': 'Главная'
+    },
+    {
+    'text': 'Коллективный пошив',
+    'last': true
+    }
+    ]}
+block content
+  include pug/parts/main-header
+  +breadcrumbs(breadcrumbsContent)
+  section.sewing
+    .container
+      h2.inner-page-title
+        span КОЛЛЕКТИВНЫЙ ПОШИВ
+      p.sewing__description
+        | Организуем коллективный пошив изделий с логотипом! В единой форме, ваш коллектив всегда будет, выгодно выделяться среди остальных!
+        | Купальники, шапки , банданы , бейсболки, спортивные костюмы, юбки и пачки, футболки , майки и сумочные изделия!
+      h3.sewing__title
+        +svg('ic_sewing')
+        | НАНЕСЕНИЕ ЛОГОТИПА
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_1.jpg` srcset=`${baseDir}images/sewing/sewing_img_1@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Вышивка] - основные преимущества вышивки это презентабельный внешний вид и долговечность. Она проста в уходе, легко переносит природные и механические воздействия, её краски остаются яркими долгие годы. В своей работе мы используем только качественные нитки из вискозы. Они не линяют, не выгорают на свету и не деформируются со временем.
+      h3.sewing__title
+        +svg('ic_towel')
+        | ТКАНИ
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_2.jpg` srcset=`${baseDir}images/sewing/sewing_img_2@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Бифлекс] - ткань, которая вырабатывается путем прядения. Это трикотажное полотно, образованное путем переплетения различных синтетических нитей. Благодаря высокому содержанию лайкры (80%) бифлексовая ткань отлично тянется в любом направлении, благодаря чему одежда из него не теряет своей формы и не стесняет движений. Изделия из бифлекса имеют стойкий цвет, материал не блекнет и сохраняет внешний вид долгие годы, не изменяя своих характеристик.
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_3.jpg` srcset=`${baseDir}images/sewing/sewing_img_3@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Эластичный хлопок] - ткань повышенной плотности (240 г/м2) специально разработана для производства спортивных изделий, соответствующих самым высоким техническим требованиям.
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_4.jpg` srcset=`${baseDir}images/sewing/sewing_img_4@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Микрофибра] - ткань, выполненная из тонких синтетических нитей различных полимеров. Свою приставку микро, она получила из-за толщины волокон размером не больше 1 DEN. Ткань из микроволокна незаменима при изготовлении спортивной одежды. Вещи из микрофибры не нарушают теплообмен во время повышенных физических нагрузок, а наоборот прекрасно отводят лишнюю влагу, позволяя телу дышать и не мерзнуть.
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_5.jpg` srcset=`${baseDir}images/sewing/sewing_img_5@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Фатин (лёгкий, средний, жёсткий)] - ткань из легкой сетки. Материал изготавливают из синтетической полиамидной нити — нейлона. Это полупрозрачная воздушная материя с блестящей либо матовой поверхностью. Он объёмный и пышный. Идеально подходит для изготовления юбок-пачек. Сетка имеет насыщенную и яркую цветовую гамму. Материал отлично держит форму и не мнётся.
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_6.jpg` srcset=`${baseDir}images/sewing/sewing_img_6@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Шифон] - изготавливают из волокон шелка, а также полиамида. Сетчатое переплетение туго скрученных нитей обеспечивает ее прозрачность. Воздушный материал позволяет создавать утонченные силуэты. Одним из преимуществ ткани является свойство изящно и красиво образовывать складки, придавая одежде легкость и изысканность.
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_7.jpg` srcset=`${baseDir}images/sewing/sewing_img_7@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Гепюр] - это ткань, состоящая из отдельных элементов рельефного кружева, соединенных тонкой сеткой. Основным отличием от классического кружева является наличие в гипюре синтетических нитей, увеличивающих его прочность и износостойкость.
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_8.jpg` srcset=`${baseDir}images/sewing/sewing_img_8@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Бархат-стрейч] - ткань очень эластичная, что позволяет одежде из этого материала легко тянуться. Бархат является гигроскопичным материалом, то есть может впитывать большое количество влаги. Главной особенностью является то, что цвет ткани лучше всего передаётся в движении. Красивые переливы прекрасно подчеркивают грацию. Именно поэтому эту ткань используют при пошиве танцевальных и гимнастических костюмов.
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_9.jpg` srcset=`${baseDir}images/sewing/sewing_img_9@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Флис] - материал лёгкий, влагоотталкивающий и неприхотливый. Флис хорошо сохраняет тепло, можно сказать, как настоящая шерсть. Материал хорошо поддерживает температуру, при которой не бывает ни жарко, ни холодно.
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_10.jpg` srcset=`${baseDir}images/sewing/sewing_img_10@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Масло] – это эластичная трикотажная ткань, получившая свое название благодаря мягкой, скользящей, «масляной» текстуре.
+      h3.sewing__title
+        +svg('ic_hand-bag')
+        | ТКАНИ ДЛЯ ИЗГОТОВЛЕНИЯ СУМОЧНЫХ ИЗДЕЛИЙ
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_11.jpg` srcset=`${baseDir}images/sewing/sewing_img_11@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Жаккард] - это полотно с узорами, полученное в результате особого переплетения нитей. Оно получается очень гладким и приятным на ощупь. Ткань прочная, износостойкая и хорошо отталкивает влагу.
+      .sewing__item
+        .sewing__pic
+          img(src=`${baseDir}images/sewing/sewing_img_12.jpg` srcset=`${baseDir}images/sewing/sewing_img_12@2x.jpg` alt='')
+        ul.sewing__list
+          li
+            | #[strong Текстиль] - нейлон, полиэстер и их аналоги - это абсолютно гладкое, приятное на ощупь, с легким блеском полотно. Ткань очень плотная, лёгкая и устойчива к влаге. Используется для пошива сумочных изделий.
+      h3.sewing__title
+          +svg('ic_color-palette')
+          a(href='#').sewing__title-link
+            | ЦВЕТОВАЯ КАРТА
+  include pug/parts/main-footer

@@ -1,0 +1,74 @@
+.sewing {
+  position: relative;
+
+  &__description {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    line-height: 1.5;
+  }
+
+  &__title {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 22px;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    &:not(:first-of-type) {
+      margin-top: 35px;
+    }
+
+    svg {
+      margin-right: 7px;
+      width: 32px;
+      height: 32px;
+      fill: $color-limeade;
+    }
+
+    &-link {
+      border-bottom: 1px dashed $color-black;
+      line-height: 1;
+      text-decoration: none;
+      color: $color-black;
+    }
+  }
+
+  &__pic {
+    margin-top: 5px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+    width: calc(100% - 100px);
+
+    li {
+      position: relative;
+      line-height: 1.5;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-left: 3px;
+        border-radius: 50%;
+        width: 7px;
+        height: 7px;
+        background-color: $color-black;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 15px;
+  }
+}
