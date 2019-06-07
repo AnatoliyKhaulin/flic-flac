@@ -1,0 +1,15 @@
+mixin popup(name)
+  .popup(id=name)
+    .popup__container
+      a.popup__close(href='#') +
+      .popup__title
+        h2
+          | Купить в 1 клик
+      .form-field
+        input(type='text' placeholder='Фамилия')
+      .form-field
+        input(type='text' placeholder='Имя')
+      .form-field
+        input(type='text' placeholder='Телефон')
+      +btn('fill').btn--fill-dark
+        | Заказать

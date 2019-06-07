@@ -1,5 +1,5 @@
-import './header-mobile';
 import './vendor';
+import './header-mobile';
 import './dropdown-menu';
 import './once-slider';
 import './catalog';
@@ -7,3 +7,4 @@ import './triple-slider';
 import './fives-slider';
 import './contacts-map';
 import './tabs';
+import './popup';

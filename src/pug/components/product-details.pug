@@ -83,7 +83,7 @@ section.product-details
         .product-info__buttons
           +btn('fill')
             | Купить
-          +btn('border')
+          +btn('border')(data-target='buyOneClickPopup').show-popup
             | Купить в 1 клик
   .product-details__tabs
     .tabs
@@ -168,3 +168,4 @@ section.product-details
             +svg('arrow_left')
           button.glide__arrow.glide__arrow--right(data-glide-dir=">")
             +svg('arrow_right')
+  +popup('buyOneClickPopup')

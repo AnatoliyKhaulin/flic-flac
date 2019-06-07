@@ -1,0 +1,77 @@
+.popup {
+  @include visually-hidden;
+
+  margin: 0;
+  background-color: transparent;
+
+  &__close {
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    font-size: 40px;
+    text-decoration: none;
+    color: $color-dusty-gray;
+    transform: rotate(45deg);
+  }
+
+  &__container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 1px solid #d7d7d7;
+    padding: 30px 70px;
+    width: 420px;
+    height: 290px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.39);
+    background-color: $color-white;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.35s;
+
+    .form-field {
+      padding-bottom: 13px;
+
+      input {
+        padding: 7px;
+        padding-left: 20px;
+        font-size: 14px;
+      }
+    }
+
+    .btn {
+      margin-top: 5px;
+      padding: 5px 25px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 3px;
+    text-align: center;
+    text-transform: uppercase;
+
+    h2 {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  &.show {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    overflow: visible;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-white, 0.73);
+    transition: background-color 0.3s;
+    clip: auto;
+
+    .popup__container {
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform 0.35s;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.delivery {
+  padding-bottom: 78px;
+
+  &__top {
+    padding-bottom: 10px;
+  }
+
+  &__bottom {
+    border-top: 1px solid $color-alto;
+    padding-top: 18px;
+  }
+
+  &__title {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 17px;
+    padding-top: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: $color-limeade;
+    text-decoration: none;
+  }
+
+  svg {
+    margin-right: 10px;
+    fill: $color-limeade;
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-top: 5px;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      margin-bottom: 3px;
+
+      &::before {
+        content: "";
+        margin-right: 5px;
+        margin-left: 5px;
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 50%;
+        width: 7px;
+        height: 7px;
+        background-color: $color-black;
+      }
+    }
+  }
+
+  .ic-delivery {
+    width: 30px;
+    height: 32px;
+  }
+
+  .ic-pay {
+    width: 30px;
+    height: 28px;
+  }
+}

@@ -1,8 +1,8 @@
 mixin btn(style, type)
 	- style = style || 'default'
 	if type === 'link'
-		a(href='#' class=`btn btn--${style} btn--${type}` class!=attributes.class)
+		a(href='#' class=`btn btn--${style} btn--${type}` class!=attributes.class)&attributes(attributes)
 			block
 	else
-		button(class=`btn btn--${style}` class!=attributes.class)
+		button(class=`btn btn--${style}` class!=attributes.class)&attributes(attributes)
 			block

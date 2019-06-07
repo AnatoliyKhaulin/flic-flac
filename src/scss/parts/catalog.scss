@@ -456,27 +456,6 @@
       transform: rotate(45deg);
     }
   }
-
-  &__show {
-    margin: 0 auto;
-    padding: 4px 30px;
-    font-family: $font-pf-handbook;
-    font-size: 18px;
-    text-transform: uppercase;
-    background-color: $color-jewel;
-
-    span {
-      display: inline-block;
-      margin-left: 3px;
-    }
-
-    @media (min-width: 1025px) {
-      &:hover,
-      &:focus {
-        border-color: $color-jewel;
-      }
-    }
-  }
 }
 
 .catalog-grid {

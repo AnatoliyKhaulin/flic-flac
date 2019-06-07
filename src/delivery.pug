@@ -1,0 +1,121 @@
+extends pug/base
+
+prepend vars
+  - title = 'Доставка и оплата - Флик Фляк'
+
+append vars
+  - link.appleTouchIcon = `${baseDir}favicon/apple-icon.png`
+  - link.appleTouchIcon57x57 = `${baseDir}favicon/apple-icon-57x57.png`
+  - link.appleTouchIcon60x60 = `${baseDir}favicon/apple-icon-60x60.png`
+  - link.appleTouchIcon72x72 = `${baseDir}favicon/apple-icon-72x72.png`
+  - link.appleTouchIcon76x76 = `${baseDir}favicon/apple-icon-76x76.png`
+  - link.appleTouchIcon114x114 = `${baseDir}favicon/apple-icon-114x114.png`
+  - link.appleTouchIcon120x120 = `${baseDir}favicon/apple-icon-120x120.png`
+  - link.appleTouchIcon144x144 = `${baseDir}favicon/apple-icon-144x144.png`
+  - link.appleTouchIcon152x152 = `${baseDir}favicon/apple-icon-152x152.png`
+  - link.appleTouchIcon180x180 = `${baseDir}favicon/apple-icon-180x180.png`
+  - link.appleTouchIconPrecomposed = `${baseDir}favicon/apple-icon-precomposed.png`
+  - link.icon = `${baseDir}favicon/favicon.ico`
+  - link.icon16x16 = `${baseDir}favicon/favicon-16x16.png`
+  - link.icon32x32 = `${baseDir}favicon/favicon-32x32.png`
+  - link.icon96x96 = `${baseDir}favicon/favicon-96x96.png`
+  - linkCssAttrs = [`${baseDir}css/social-nav.css`, `${baseDir}css/forms.css`, `${baseDir}css/main-nav.css`, `${baseDir}css/catalog.css`]
+  - linkJsAttrs = ['']
+  -
+    var navContent = {'items':[
+    {
+    'textLink': 'О НАС',
+    'dropdownClass': 'js-nav-dropdown-link active',
+    'dropdown': [
+    {
+    'textLinkDropdown': 'О компании',
+    },
+    {
+    'textLinkDropdown': 'Новости',
+    },
+    {
+    'textLinkDropdown': 'Статьи',
+    },
+    {
+    'textLinkDropdown': 'Вакансии',
+    },
+    {
+    'textLinkDropdown': 'Фотогалерея',
+    }
+    ]
+    },
+    {
+    'textLink': 'КАТАЛОГ'
+    },
+    {
+    'textLink': 'РАСПРОДАЖА'
+    },
+    {
+    'textLink': 'КОЛЛЕКТИВАМ'
+    },
+    {
+    'textLink': 'АКЦИИ'
+    },
+    {
+    'textLink': 'КОНТАКТЫ'
+    }
+    ]}
+
+    var breadcrumbsContent = {'items':[
+    {
+    'text': 'Главная'
+    },
+    {
+    'text': 'О компанни'
+    },
+    {
+    'text': 'Доставка и оплата',
+    'last': true
+    }
+    ]}
+block content
+  include pug/parts/main-header
+  +breadcrumbs(breadcrumbsContent)
+  section.delivery
+    .container
+      h2.inner-page-title
+        span Доставка и оплата
+      .delivery__top
+        h5.delivery__title
+          | ОПЛАТА В МАГАЗИНАХ ПРИНИМАЕТСЯ НАЛИЧНЫМ И БЕЗНАЛИЧНЫМ РАСЧЁТОМ
+
+        h5.delivery__title
+          +svg('ic_box').ic-delivery
+          | ДОСТАВКА ПО САНКТ-ПЕТЕРБУРГУ КУРЬЕРОМ
+
+        ul
+          li
+            | Минимальная сумма заказа 1000 руб.
+          li
+            | Стоимость доставки 300 - 400 руб. (в пределах КАД)
+
+        h5.delivery__title
+          +svg('ic_box').ic-delivery
+          | УСЛОВИЯ ДОСТАВКИ В РЕГИОНЫ
+
+        ul
+          li
+            | Заказ можно получить Почтой России в ближайшее почтовое отделение, по указанному адресу. Сроки уточняются на сайте #[a(href="https://www.pochta.ru/" target="_blank") https://www.pochta.ru/]
+            | Отправка заказов осуществляется два раза в неделю. Минимальная сумма заказа —1000 руб. Стоимость доставки — 300 руб.
+          li
+            | Заказ можно получить срочным способом по почте EMC, курьером до адреса. Отправка в день заказа. Стоимость можно рассчитать на сайте
+            br
+            a(href='https://www.pochta.ru/' target="_blank")
+              | https://www.pochta.ru/
+
+      .delivery__bottom
+        h5.delivery__title
+          +svg('ic_pay').ic-pay
+          | ОПЛАТИТЬ ЗАКАЗ ВЫ МОЖЕТЕ:
+
+        ul
+          li
+            | на нашу карту Сбербанка
+          li
+            | на наш расчетный счет по счету (для юрлиц и ИП)
+  include pug/parts/main-footer
