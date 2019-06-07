@@ -22,8 +22,30 @@
   }
 
   a {
-    color: $color-limeade;
+    position: relative;
     text-decoration: none;
+    color: $color-limeade;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: $color-limeade;
+      transition: width 0.2s;
+    }
+
+    @media (min-width: 1025px) {
+      &:hover,
+      &:focus {
+        &::after {
+          width: 100%;
+          transition: width 0.2s;
+        }
+      }
+    }
   }
 
   svg {
