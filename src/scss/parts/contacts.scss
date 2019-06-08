@@ -40,8 +40,8 @@
     }
 
     @media (max-width: 767px) {
-      width: 100%;
       padding-bottom: 56.25%;
+      width: 100%;
     }
   }
 
@@ -103,5 +103,126 @@
     font-size: 16px;
     line-height: 1.42;
     color: #333;
+  }
+
+  &__schedule {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    padding-left: 5px;
+
+    li {
+      padding-left: 5px;
+      font-weight: 600;
+      line-height: 1.2;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        border-radius: 50%;
+        width: 7px;
+        height: 7px;
+        background-color: $color-black;
+      }
+    }
+  }
+
+  &__schedule-title {
+    padding-left: 5px;
+    font-weight: 700;
+    line-height: 1.7;
+    text-decoration: underline;
+  }
+
+  &__description {
+    padding-left: 5px;
+    line-height: 1.3;
+  }
+}
+
+.contacts-page {
+  padding-bottom: 62px;
+
+  &__social {
+    list-style: none;
+    margin-top: 25px;
+    padding: 0;
+    padding-bottom: 24px;
+    box-shadow: 0 -9px 0 $color-white, 0 1px 9px rgba($color-black, 0.2);
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      a {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $color-limeade;
+          transition: width 0.3s;
+        }
+
+        @media (min-width: 1025px) {
+          &:hover,
+          &:focus {
+            &::after {
+              width: 0;
+              transition: width 0.3s;
+            }
+          }
+        }
+      }
+    }
+
+    svg {
+      margin-right: 13px;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+
+      &.inst-ic {
+        background-image: radial-gradient(
+          farthest-corner at -6px 20px,
+          #fed576 0%,
+          #f47133 26.34%,
+          #bc3081 60.91%,
+          #b424a6 100%
+        );
+      }
+    }
+  }
+}
+
+.contacts-page-map {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 70px;
+
+  &__info {
+    padding-top: 15px;
+    width: 540px;
+
+    .contacts-list__adress {
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+  }
+
+  &__box {
+    padding-top: 30px;
+    width: 585px;
+    height: 320px;
   }
 }

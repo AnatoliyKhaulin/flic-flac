@@ -1,0 +1,184 @@
+extends pug/base
+
+prepend vars
+  - title = 'Доставка и оплата - Флик Фляк'
+
+append vars
+  - link.appleTouchIcon = `${baseDir}favicon/apple-icon.png`
+  - link.appleTouchIcon57x57 = `${baseDir}favicon/apple-icon-57x57.png`
+  - link.appleTouchIcon60x60 = `${baseDir}favicon/apple-icon-60x60.png`
+  - link.appleTouchIcon72x72 = `${baseDir}favicon/apple-icon-72x72.png`
+  - link.appleTouchIcon76x76 = `${baseDir}favicon/apple-icon-76x76.png`
+  - link.appleTouchIcon114x114 = `${baseDir}favicon/apple-icon-114x114.png`
+  - link.appleTouchIcon120x120 = `${baseDir}favicon/apple-icon-120x120.png`
+  - link.appleTouchIcon144x144 = `${baseDir}favicon/apple-icon-144x144.png`
+  - link.appleTouchIcon152x152 = `${baseDir}favicon/apple-icon-152x152.png`
+  - link.appleTouchIcon180x180 = `${baseDir}favicon/apple-icon-180x180.png`
+  - link.appleTouchIconPrecomposed = `${baseDir}favicon/apple-icon-precomposed.png`
+  - link.icon = `${baseDir}favicon/favicon.ico`
+  - link.icon16x16 = `${baseDir}favicon/favicon-16x16.png`
+  - link.icon32x32 = `${baseDir}favicon/favicon-32x32.png`
+  - link.icon96x96 = `${baseDir}favicon/favicon-96x96.png`
+  - linkCssAttrs = [`${baseDir}css/social-nav.css`, `${baseDir}css/forms.css`, `${baseDir}css/main-nav.css`, `${baseDir}css/catalog.css`, `${baseDir}css/contacts.css`]
+  - linkJsAttrs = ['//api-maps.yandex.ru/2.1/?lang=ru_RU']
+  -
+    var navContent = {'items':[
+    {
+    'textLink': 'О НАС',
+    'dropdownClass': 'js-nav-dropdown-link active',
+    'dropdown': [
+    {
+    'textLinkDropdown': 'О компании',
+    },
+    {
+    'textLinkDropdown': 'Новости',
+    },
+    {
+    'textLinkDropdown': 'Статьи',
+    },
+    {
+    'textLinkDropdown': 'Вакансии',
+    },
+    {
+    'textLinkDropdown': 'Фотогалерея',
+    }
+    ]
+    },
+    {
+    'textLink': 'КАТАЛОГ'
+    },
+    {
+    'textLink': 'РАСПРОДАЖА'
+    },
+    {
+    'textLink': 'КОЛЛЕКТИВАМ'
+    },
+    {
+    'textLink': 'АКЦИИ'
+    },
+    {
+    'textLink': 'КОНТАКТЫ'
+    }
+    ]}
+
+    var breadcrumbsContent = {'items':[
+    {
+    'text': 'Главная'
+    },
+    {
+    'text': 'Контакты',
+    'last': true
+    }
+    ]}
+block content
+  include pug/parts/main-header
+  +breadcrumbs(breadcrumbsContent)
+  section.contacts-page
+    .container
+      h2.inner-page-title
+        span КОНТАКТЫ И РЕЖИМ РАБОТЫ
+    ul.contacts-page__social
+      .container
+        li
+          +svg('ic_social_arroba')
+          span
+            | E-mail:&nbsp;
+          a(href='mailto:flicflac.ira@mail.ru')
+            | flicflac.ira@mail.ru
+
+        li
+          +svg('ic_social_vk')
+          span
+            | Группа вконтакте:&nbsp;
+          a(href='http://vk.com/flicflac')
+            | http://vk.com/flicflac
+
+        li
+          +svg('ic_social_inst').inst-ic
+          span
+            | Мы в инстаграмм:&nbsp;
+          a(href='https://www.instagram.com/flic_flac_dance_shop/')
+            | https://www.instagram.com/flic_flac_dance_shop/
+
+        li
+          +svg('ic_social_ok')
+          span
+            | Мы в одноклассниках:&nbsp;
+          a(href='https://ok.ru/group/54609899946229')
+            | https://ok.ru/group/54609899946229
+
+        li
+          +svg('ic_social_fb')
+          span
+            | Мы в фейсбук:&nbsp;
+          a(href='https://www.facebook.com/flicflac.dance.shop/')
+            | https://www.facebook.com/flicflac.dance.shop/
+    .contacts-page__maps
+      .container
+        .contacts-page-map
+          .contacts-page-map__info
+            ul.contacts-list
+              li.contacts-list__item
+                .contacts-list__link
+                  +svg('flac_location')
+                  span
+                    | «ФЛИК ФЛЯК» КУПЧИНО:
+                p.contacts-list__adress
+                  | 192284, Санкт-Петербург, ул. Купчинская, 4 (корп. 4)
+                  br
+                  | Тел: 8 (981) 104 77 30
+                strong.contacts-list__schedule-title
+                  | Режим работы «ФЛИК ФЛЯК» Купчино:
+                ul.contacts-list__schedule
+                  li
+                    | Понедельник – пятница : 11.00–20.00
+                  li
+                    | Cуббота, воскресенье: 11.00–18.00
+                p.contacts-list__description
+                  | В остальное время, мы всегда готовы с вами встретиться, только по предварительному звонку! Если Вы не успеваете подъехать к нам в указанное время - позвоните и мы найдем выход из ситуации
+          .contacts-page-map__box#contactsMapAdressFirst
+        .contacts-page-map
+          .contacts-page-map__info
+            ul.contacts-list
+              li.contacts-list__item
+                .contacts-list__link
+                  +svg('flac_location')
+                  span
+                    | «ФЛИК ФЛЯК» Озерки:
+                p.contacts-list__adress
+                  | 192284, Санкт-Петербург, пр. Энгельса 98
+                  br
+                  | Тел: 8 (981) 104 77 29
+                strong.contacts-list__schedule-title
+                  | Режим работы «ФЛИК ФЛЯК» Озерки:
+                ul.contacts-list__schedule
+                  li
+                    | Понедельник – пятница : 11.00–20.00
+                  li
+                    | Cуббота, воскресенье: 11.00–18.00
+                p.contacts-list__description
+                  | В остальное время, мы всегда готовы с вами встретиться, только по предварительному звонку! Если Вы не успеваете подъехать к нам в указанное время - позвоните и мы найдем выход из ситуации.
+          .contacts-page-map__box#contactsMapAdressSecond
+        .contacts-page-map
+          .contacts-page-map__info
+            ul.contacts-list
+              li.contacts-list__item
+                .contacts-list__link
+                  +svg('flac_location')
+                  span
+                    | «ФЛИК ФЛЯК» ВАСИЛЕОСТРОВСКАЯ:
+                p.contacts-list__adress
+                  | метро Василеостровская, 16 линия В.О. д. 45
+                  br
+                  | Тел: 8 (911) 104 77 35
+                strong.contacts-list__schedule-title
+                  | Режим работы «ФЛИК ФЛЯК» Василеостровская:
+                ul.contacts-list__schedule
+                  li
+                    | Понедельник – пятница : 11.00–20.00
+                  li
+                    | Cуббота, воскресенье: 11.00–18.00
+                p.contacts-list__description
+                  | В остальное время, мы всегда готовы с вами встретиться, только по предварительному звонку! Если Вы не успеваете подъехать к нам в указанное время - позвоните и мы найдем выход из ситуации
+          .contacts-page-map__box#contactsMapAdressThird
+  include pug/parts/main-footer

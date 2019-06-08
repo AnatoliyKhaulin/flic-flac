@@ -7,6 +7,10 @@ let contactsAdressOne = document.querySelector('#contactsAdressOne');
 let contactsAdressTwo = document.querySelector('#contactsAdressTwo');
 let contactsAdressThree = document.querySelector('#contactsAdressThree');
 
+let contactsMapAdressFirst = document.querySelector('#contactsMapAdressFirst');
+let contactsMapAdressSecond = document.querySelector('#contactsMapAdressSecond');
+let contactsMapAdressThird = document.querySelector('#contactsMapAdressThird');
+
 function init() {
 
   let contactsMap = new ymaps.Map("contactsMap", {
@@ -108,6 +112,180 @@ function init() {
   });
 }
 
+function initMapAdressFirst() {
+
+  let contactsMap = new ymaps.Map(contactsMapAdressFirst, {
+    center: adressCordOne,
+    zoom: 16,
+  }, {
+    searchControlProvider: 'yandex#search',
+  });
+
+  contactsMap.controls.add(new ymaps.control.ZoomControl({
+    options: {
+      position: {
+        left: 10,
+        bottom: 70,
+      },
+    },
+  }));
+
+  onePlacemark = new ymaps.Placemark(adressCordOne, {
+    hintContent: '«ФЛИК ФЛЯК» КУПЧИНО:',
+    balloonContent: '192284, Санкт-Петербург, ул. Купчинская, 4 (корп. 4)',
+  }, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#image',
+    // Своё изображение иконки метки.
+    iconImageHref: './images/sprites/svg/flac_location_map.svg',
+    // Размеры метки.
+    iconImageSize: [123, 63],
+    // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки).
+    iconImageOffset: [-5, -38],
+  });
+
+  contactsMap.geoObjects
+    .add(onePlacemark);
+
+  contactsMap.controls.remove('geolocationControl');
+  contactsMap.controls.remove('searchControl');
+  contactsMap.controls.remove('trafficControl');
+  contactsMap.controls.remove('typeSelector');
+  contactsMap.controls.remove('fullscreenControl');
+  contactsMap.controls.remove('rulerControl');
+  contactsMap.controls.remove('zoomControl');
+  contactsMap.behaviors.disable('scrollZoom');
+  contactsMap.behaviors.disable('drag');
+
+  $(window).on('resize', function () {
+    setTimeout(function () {
+      contactsMap.container.fitToViewport();
+    }, 250);
+  });
+}
+
+function initMapAdressSecond() {
+
+  let contactsMap = new ymaps.Map(contactsMapAdressSecond, {
+    center: adressCordTwo,
+    zoom: 16,
+  }, {
+    searchControlProvider: 'yandex#search',
+  });
+
+  contactsMap.controls.add(new ymaps.control.ZoomControl({
+    options: {
+      position: {
+        left: 10,
+        bottom: 70,
+      },
+    },
+  }));
+
+  onePlacemark = new ymaps.Placemark(adressCordTwo, {
+    hintContent: '«ФЛИК ФЛЯК» Озерки:',
+    balloonContent: '192284, Санкт-Петербург, пр. Энгельса 98',
+  }, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#image',
+    // Своё изображение иконки метки.
+    iconImageHref: './images/sprites/svg/flac_location_map.svg',
+    // Размеры метки.
+    iconImageSize: [123, 63],
+    // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки).
+    iconImageOffset: [-5, -38],
+  });
+
+  contactsMap.geoObjects
+    .add(onePlacemark);
+
+  contactsMap.controls.remove('geolocationControl');
+  contactsMap.controls.remove('searchControl');
+  contactsMap.controls.remove('trafficControl');
+  contactsMap.controls.remove('typeSelector');
+  contactsMap.controls.remove('fullscreenControl');
+  contactsMap.controls.remove('rulerControl');
+  contactsMap.controls.remove('zoomControl');
+  contactsMap.behaviors.disable('scrollZoom');
+  contactsMap.behaviors.disable('drag');
+
+  $(window).on('resize', function () {
+    setTimeout(function () {
+      contactsMap.container.fitToViewport();
+    }, 250);
+  });
+}
+
+function initMapAdressThird() {
+
+  let contactsMap = new ymaps.Map(contactsMapAdressThird, {
+    center: adressCordThree,
+    zoom: 16,
+  }, {
+    searchControlProvider: 'yandex#search',
+  });
+
+  contactsMap.controls.add(new ymaps.control.ZoomControl({
+    options: {
+      position: {
+        left: 10,
+        bottom: 70,
+      },
+    },
+  }));
+
+  onePlacemark = new ymaps.Placemark(adressCordThree, {
+    hintContent: '«ФЛИК ФЛЯК» ВАСИЛЕОСТРОВСКАЯ:',
+    balloonContent: 'метро Василеостровская, 16 линия В.О. д. 45',
+  }, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#image',
+    // Своё изображение иконки метки.
+    iconImageHref: './images/sprites/svg/flac_location_map.svg',
+    // Размеры метки.
+    iconImageSize: [123, 63],
+    // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки).
+    iconImageOffset: [-5, -38],
+  });
+
+  contactsMap.geoObjects
+    .add(onePlacemark);
+
+  contactsMap.controls.remove('geolocationControl');
+  contactsMap.controls.remove('searchControl');
+  contactsMap.controls.remove('trafficControl');
+  contactsMap.controls.remove('typeSelector');
+  contactsMap.controls.remove('fullscreenControl');
+  contactsMap.controls.remove('rulerControl');
+  contactsMap.controls.remove('zoomControl');
+  contactsMap.behaviors.disable('scrollZoom');
+  contactsMap.behaviors.disable('drag');
+
+  $(window).on('resize', function () {
+    setTimeout(function () {
+      contactsMap.container.fitToViewport();
+    }, 250);
+  });
+}
+
 if(indexMap) {
   ymaps.ready(init);
+}
+
+if(contactsMapAdressFirst) {
+  ymaps.ready(initMapAdressFirst);
+}
+
+if(contactsMapAdressSecond) {
+  ymaps.ready(initMapAdressSecond);
+}
+
+if(contactsMapAdressThird) {
+  ymaps.ready(initMapAdressThird);
 }
