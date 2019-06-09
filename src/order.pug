@@ -1,0 +1,239 @@
+extends pug/base
+
+prepend vars
+  - title = 'Оформление заказа - Флик Фляк'
+
+append vars
+  - link.appleTouchIcon = `${baseDir}favicon/apple-icon.png`
+  - link.appleTouchIcon57x57 = `${baseDir}favicon/apple-icon-57x57.png`
+  - link.appleTouchIcon60x60 = `${baseDir}favicon/apple-icon-60x60.png`
+  - link.appleTouchIcon72x72 = `${baseDir}favicon/apple-icon-72x72.png`
+  - link.appleTouchIcon76x76 = `${baseDir}favicon/apple-icon-76x76.png`
+  - link.appleTouchIcon114x114 = `${baseDir}favicon/apple-icon-114x114.png`
+  - link.appleTouchIcon120x120 = `${baseDir}favicon/apple-icon-120x120.png`
+  - link.appleTouchIcon144x144 = `${baseDir}favicon/apple-icon-144x144.png`
+  - link.appleTouchIcon152x152 = `${baseDir}favicon/apple-icon-152x152.png`
+  - link.appleTouchIcon180x180 = `${baseDir}favicon/apple-icon-180x180.png`
+  - link.appleTouchIconPrecomposed = `${baseDir}favicon/apple-icon-precomposed.png`
+  - link.icon = `${baseDir}favicon/favicon.ico`
+  - link.icon16x16 = `${baseDir}favicon/favicon-16x16.png`
+  - link.icon32x32 = `${baseDir}favicon/favicon-32x32.png`
+  - link.icon96x96 = `${baseDir}favicon/favicon-96x96.png`
+  - linkCssAttrs = [`${baseDir}css/social-nav.css`, `${baseDir}css/forms.css`, `${baseDir}css/main-nav.css`]
+  - linkJsAttrs = ['']
+  -
+    var navContent = {'items':[
+    {
+    'textLink': 'О НАС',
+    'dropdownClass': 'js-nav-dropdown-link active',
+    'dropdown': [
+    {
+    'textLinkDropdown': 'О компании',
+    },
+    {
+    'textLinkDropdown': 'Новости',
+    },
+    {
+    'textLinkDropdown': 'Статьи',
+    },
+    {
+    'textLinkDropdown': 'Вакансии',
+    },
+    {
+    'textLinkDropdown': 'Фотогалерея',
+    }
+    ]
+    },
+    {
+    'textLink': 'КАТАЛОГ'
+    },
+    {
+    'textLink': 'РАСПРОДАЖА'
+    },
+    {
+    'textLink': 'КОЛЛЕКТИВАМ'
+    },
+    {
+    'textLink': 'АКЦИИ'
+    },
+    {
+    'textLink': 'КОНТАКТЫ'
+    }
+    ]}
+
+    var breadcrumbsContent = {'items':[
+    {
+    'text': 'Главная'
+    },
+    {
+    'text': 'Корзина'
+    },
+    {
+    'text': 'Оформление заказа',
+    'last': true
+    }
+    ]}
+block content
+  include pug/parts/main-header
+  +breadcrumbs(breadcrumbsContent)
+  form.order(action='/')
+    .container
+      h2.inner-page-title
+        span Оформление заказа
+      .order__inner
+        .order__left
+          h3.order-title
+            | 1. Контактные данные
+          .order-data
+            label.form-field
+              span
+                | Имя: *
+              input(type='text' name='name')
+            label.form-field
+              span
+                | Фамилия: *
+              input(type='text' name='name')
+            label.form-field
+              span
+                | Телефон: *
+              input(type='text' name='name')
+            label.form-field
+              span
+                | Email: *
+              input(type='text' name='name')
+          h3.order-title
+            | 2. Выберите способ оплаты и доставки
+          .order-delivery
+            strong.order-delivery__title
+              | Способ доставки: *
+            label.form-field.form-field--gray.form-field--radio
+              input(type='radio' name='delivery_1')
+              span.radio-ic
+              span.radio-text
+                | #[strong Курьером] от 350 руб
+                br
+                | Точную стоимость доставки предоставит консультант.
+            label.form-field.form-field--radio
+              input(type='radio' name='delivery_1')
+              span.radio-ic
+              span.radio-text.radio-text--accent-inner
+                | Самовывоз из магазина #[span(class='accent-color') Бесплатно]
+            .form-field.order-delivery__adress
+              span
+                | Выберите пункт выдачи:
+              select
+                option
+                  | Адрес 1
+                option
+                  | Адрес 2
+                option
+                  | Адрес 3
+          .order-pay
+            strong.order-pay__title
+              | Способ оплаты: *
+
+            label.form-field.form-field--radio
+              input(type='radio' name='orderPay_1')
+              span.radio-ic
+              span.radio-text
+                | Наличные при получении
+
+            label.form-field.form-field--radio
+              input(type='radio' name='orderPay_1')
+              span.radio-ic
+              span.radio-text
+                | Картой в режиме онлайн
+
+            label.form-field.form-field--radio
+              input(type='radio' name='orderPay_1')
+              span.radio-ic
+              span.radio-text
+                | Картой при получении
+
+            label.form-field.form-field--radio
+              input(type='radio' name='orderPay_1')
+              span.radio-ic
+              span.radio-text
+                | Электронные деньги
+                br
+                | (YandexДеньги, WebMoney и др.)
+
+          .order-comment
+            label.form-field.form-field--message
+              span
+                | Добавить комментарий к заказу:
+              textarea(placeholder='')
+
+          label.form-field.form-field--checkbox
+            input(type='checkbox' name='accentCheck')
+            span.checkbox-ic
+              +svg('tick').checkbox-ic-tick
+            span.checkbox-text
+              | Предоставляя свои персональные данные #[a(href='#') даю согласие на их обработку]
+        .order__right
+          h3.order-title
+            | Ваши товары
+          .order-item
+            .order-item__picture
+              img(src=`${baseDir}images/basket/basket_image_1.jpg` srcset=`${baseDir}images/basket/basket_image_1@2x.jpg` alt='')
+            .order-item__info
+              h4
+                | Рейтинговое платье из сатин-вельвета
+              strong
+                | 7100 руб
+            .order-item__close
+              +svg('close')
+
+          .order-item
+            .order-item__picture
+              img(src=`${baseDir}images/basket/basket_image_2.jpg` srcset=`${baseDir}images/basket/basket_image_2@2x.jpg` alt='')
+            .order-item__info
+              h4
+                | Рейтинговое платье из сатин-вельвета
+              strong
+                | 7100 руб
+            .order-item__close
+              +svg('close')
+
+          .order-item
+            .order-item__picture
+              img(src=`${baseDir}images/basket/basket_image_1.jpg` srcset=`${baseDir}images/basket/basket_image_1@2x.jpg` alt='')
+            .order-item__info
+              h4
+                | Рейтинговое платье из сатин-вельвета
+              strong
+                | 7100 руб
+            .order-item__close
+              +svg('close')
+
+          .order-item
+            .order-item__picture
+              img(src=`${baseDir}images/basket/basket_image_2.jpg` srcset=`${baseDir}images/basket/basket_image_2@2x.jpg` alt='')
+            .order-item__info
+              h4
+                | Рейтинговое платье из сатин-вельвета
+              strong
+                | 7100 руб
+            .order-item__close
+              +svg('close')
+
+          footer.order-footer
+            .order-promo
+              a(href='#')
+                | Применить промокод
+
+              .order-promo__field
+                .form-field
+                  input(type='text' name='promo' placeholder='Введите промокод')
+                +btn('border')
+                  | Применить
+
+            .order-footer__total
+              span
+                | Итого к оплате:
+              strong
+                | 28400 руб
+
+      +btn('fill').order-accept
+        | Подтвердить заказ
+  include pug/parts/main-footer

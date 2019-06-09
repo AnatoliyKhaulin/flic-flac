@@ -1,0 +1,101 @@
+.basket {
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.basket-list {
+  padding-top: 12px;
+}
+
+.basket-item {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  border-top: 1px solid $color-alto;
+  padding: 30px 0;
+
+  &:last-of-type {
+    border-bottom: 1px solid $color-alto;
+  }
+
+  &__picture {
+    margin-right: 75px;
+    width: 136px;
+    height: 136px;
+  }
+
+  &__info {
+    margin-right: 225px;
+    padding-top: 22px;
+    width: 365px;
+
+    h4 {
+      margin: 0;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+
+    span {
+      display: block;
+      color: $color-dove-gray;
+    }
+
+    strong {
+      display: block;
+      font-size: 18px;
+    }
+  }
+
+  &__count {
+    margin-top: auto;
+    margin-right: 30px;
+    padding-bottom: 40px;
+    width: 80px;
+  }
+
+  &__price {
+    margin-top: auto;
+    padding-bottom: 45px;
+    font-size: 18px;
+  }
+
+  &__close {
+    position: absolute;
+    right: 14px;
+    top: 3px;
+    font-weight: 100;
+    font-size: 50px;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+}
+
+.basket-footer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  padding-top: 25px;
+  width: 100%;
+
+  &__price {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+
+  .btn {
+    padding: 5px 25px;
+    font-family: $font-pf-handbook;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+}
+
+.basket-total {
+  margin-left: 12px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+}

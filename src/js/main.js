@@ -8,3 +8,6 @@ import './fives-slider';
 import './contacts-map';
 import './tabs';
 import './popup';
+import 'jquery.nice-number/src/jquery.nice-number';
+import $ from "jquery";
+$('input[type="number"]').niceNumber();
