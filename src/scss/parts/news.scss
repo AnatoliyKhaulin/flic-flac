@@ -1,0 +1,75 @@
+@import "../variables";
+
+.news {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.news-list {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.news-item {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 20px;
+  border-bottom: 1px solid $color-alto;
+  padding-bottom: 20px;
+
+  &__pic {
+    margin-top: 5px;
+    border-radius: 50%;
+    width: 136px;
+    height: 135px;
+  }
+
+  &__text {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-left: 33px;
+    width: calc(100% - 136px);
+  }
+
+  &__title {
+    margin-top: 22px;
+    margin-bottom: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 75px;
+    line-height: 1.5;
+  }
+
+  &__read-more {
+    position: relative;
+    display: inline-block;
+    align-self: flex-end;
+    margin-right: 12px;
+    margin-left: auto;
+    border-bottom: 1px dashed $color-limeade;
+    font-size: 14px;
+    text-decoration: none;
+
+    svg {
+      position: absolute;
+      right: -12px;
+      top: 4px;
+      width: 7px;
+      height: 13px;
+      fill: $color-limeade;
+    }
+
+    @media (min-width: 1025px) {
+      &:hover,
+      &:focus {
+        border-color: transparent;
+      }
+    }
+  }
+}

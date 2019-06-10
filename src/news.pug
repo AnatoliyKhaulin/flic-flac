@@ -1,0 +1,142 @@
+extends pug/base
+
+prepend vars
+  - title ='Новости - Флик Фляк'
+
+append vars
+  - link.appleTouchIcon = `${baseDir}favicon/apple-icon.png`
+  - link.appleTouchIcon57x57 = `${baseDir}favicon/apple-icon-57x57.png`
+  - link.appleTouchIcon60x60 = `${baseDir}favicon/apple-icon-60x60.png`
+  - link.appleTouchIcon72x72 = `${baseDir}favicon/apple-icon-72x72.png`
+  - link.appleTouchIcon76x76 = `${baseDir}favicon/apple-icon-76x76.png`
+  - link.appleTouchIcon114x114 = `${baseDir}favicon/apple-icon-114x114.png`
+  - link.appleTouchIcon120x120 = `${baseDir}favicon/apple-icon-120x120.png`
+  - link.appleTouchIcon144x144 = `${baseDir}favicon/apple-icon-144x144.png`
+  - link.appleTouchIcon152x152 = `${baseDir}favicon/apple-icon-152x152.png`
+  - link.appleTouchIcon180x180 = `${baseDir}favicon/apple-icon-180x180.png`
+  - link.appleTouchIconPrecomposed = `${baseDir}favicon/apple-icon-precomposed.png`
+  - link.icon = `${baseDir}favicon/favicon.ico`
+  - link.icon16x16 = `${baseDir}favicon/favicon-16x16.png`
+  - link.icon32x32 = `${baseDir}favicon/favicon-32x32.png`
+  - link.icon96x96 = `${baseDir}favicon/favicon-96x96.png`
+  - linkCssAttrs = [`${baseDir}css/social-nav.css`, `${baseDir}css/forms.css`, `${baseDir}css/main-nav.css`, `${baseDir}css/news.css`]
+  - linkJsAttrs = ['']
+  -
+    var navContent = {'items':[
+    {
+    'textLink': 'О НАС',
+    'dropdownClass': 'js-nav-dropdown-link active',
+    'dropdown': [
+    {
+    'textLinkDropdown': 'О компании',
+    },
+    {
+    'textLinkDropdown': 'Новости',
+    },
+    {
+    'textLinkDropdown': 'Статьи',
+    },
+    {
+    'textLinkDropdown': 'Вакансии',
+    },
+    {
+    'textLinkDropdown': 'Фотогалерея',
+    }
+    ]
+    },
+    {
+    'textLink': 'КАТАЛОГ'
+    },
+    {
+    'textLink': 'РАСПРОДАЖА'
+    },
+    {
+    'textLink': 'КОЛЛЕКТИВАМ'
+    },
+    {
+    'textLink': 'АКЦИИ'
+    },
+    {
+    'textLink': 'КОНТАКТЫ'
+    }
+    ]}
+
+    var breadcrumbsContent = {'items':[
+    {
+    'text': 'Главная'
+    },
+    {
+    'text': 'О компании'
+    },
+    {
+    'text': 'Новости',
+    'last': true
+    }
+    ]}
+block content
+  include pug/parts/main-header
+  +breadcrumbs(breadcrumbsContent)
+  form.news(action='/')
+    .container
+      h2.inner-page-title
+        span Новости
+      .news-list
+        article.news-item
+          .news-item__pic
+            img(src=`${baseDir}images/news/news_image_1.jpg` srcset=`${baseDir}images/news/news_image_1@2x.jpg` alt='')
+          .news-item__text
+            span.news-item__date
+              | 16 апреля 2019
+            h5.news-item__title
+              | Конкурс рисунка от флик фляк
+            p.news-item__description
+              | Друзья , хотим отметить волшебную красоту эстетических видов спорта и танцев во всех их направлениях . Наблюдая за этим искусством , мы получаем вдохновение и головокружительное удовольствие от каждого движения !
+              br
+              | Предлагаем Вам принять участие в творческом конкурсе на лучший рисунок.
+            a.news-item__read-more(href='#')
+              | Подробнее
+              +svg('arrow_right')
+
+        article.news-item
+          .news-item__pic
+            img(src=`${baseDir}images/news/news_image_2.jpg` srcset=`${baseDir}images/news/news_image_2@2x.jpg` alt='')
+          .news-item__text
+            span.news-item__date
+              | 05 марта 2019
+            h5.news-item__title
+              | ИЗМЕНЕНИЕ В РЕЖИМЕ РАБОТЫ МАГАЗИНОВ
+            p.news-item__description
+              | Дорогие друзья, обращаем ваше внимание на то, что с 30 июня 2018 года по 15 июля 2018 года изменяется режим работы службы доставки нашего магазина. Все заказы будут обработаны, ни один ваш оформленный заказ не потеряется. Приносим вам заранее наши извинения за доставленные неудобства.
+            a.news-item__read-more(href='#')
+              | Подробнее
+              +svg('arrow_right')
+
+        article.news-item
+          .news-item__pic
+            img(src=`${baseDir}images/news/news_image_3.jpg` srcset=`${baseDir}images/news/news_image_3@2x.jpg` alt='')
+          .news-item__text
+            span.news-item__date
+              | 04 марта 2019
+            h5.news-item__title
+              | КАК ПОДОБРАТЬ ОБРУЧ ДЛЯ ХУДОЖЕСТВЕННОЙ ГИМНАСТИКИ
+            p.news-item__description
+              | Чтобы обруч полностью подходил вашей юной гимнастке, измерьте расстояние от пола до тазовой кости (точка находится примерно на 2 см ниже пупка) – полученные данные и будут нужным диаметром обруча, который подойдёт именно вашей девочке. При покупке вы можете воспользоваться иной классификацией, ориентируясь на рост.
+            a.news-item__read-more(href='#')
+              | Подробнее
+              +svg('arrow_right')
+
+        article.news-item
+          .news-item__pic
+            img(src=`${baseDir}images/news/news_image_4.jpg` srcset=`${baseDir}images/news/news_image_4@2x.jpg` alt='')
+          .news-item__text
+            span.news-item__date
+              | 02 марта 2019
+            h5.news-item__title
+              | Советы по использованию утяжелителей
+            p.news-item__description
+              | Чтобы мышцы не привыкали к нагрузке, вес утяжелителей нужно постоянно менять – как в сторону увеличения, так и в сторону уменьшения. Хороший эффект дает постепенное наращивание веса: сначала тренируетесь с весом один килограмм, а спустя месяц – с двумя.
+            a.news-item__read-more(href='#')
+              | Подробнее
+              +svg('arrow_right')
+      +pagination(5, 4,'', 5, arrows)
+  include pug/parts/main-footer
