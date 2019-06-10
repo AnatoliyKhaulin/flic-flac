@@ -17,6 +17,13 @@ body {
 
 a {
   color: $color-limeade;
+
+  @media (min-width: 1025px) {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 .container {

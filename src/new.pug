@@ -1,0 +1,130 @@
+extends pug/base
+
+prepend vars
+  - title = 'Конкурс Рисунка от Флик фляк - Флик Фляк'
+
+append vars
+  - link.appleTouchIcon = `${baseDir}favicon/apple-icon.png`
+  - link.appleTouchIcon57x57 = `${baseDir}favicon/apple-icon-57x57.png`
+  - link.appleTouchIcon60x60 = `${baseDir}favicon/apple-icon-60x60.png`
+  - link.appleTouchIcon72x72 = `${baseDir}favicon/apple-icon-72x72.png`
+  - link.appleTouchIcon76x76 = `${baseDir}favicon/apple-icon-76x76.png`
+  - link.appleTouchIcon114x114 = `${baseDir}favicon/apple-icon-114x114.png`
+  - link.appleTouchIcon120x120 = `${baseDir}favicon/apple-icon-120x120.png`
+  - link.appleTouchIcon144x144 = `${baseDir}favicon/apple-icon-144x144.png`
+  - link.appleTouchIcon152x152 = `${baseDir}favicon/apple-icon-152x152.png`
+  - link.appleTouchIcon180x180 = `${baseDir}favicon/apple-icon-180x180.png`
+  - link.appleTouchIconPrecomposed = `${baseDir}favicon/apple-icon-precomposed.png`
+  - link.icon = `${baseDir}favicon/favicon.ico`
+  - link.icon16x16 = `${baseDir}favicon/favicon-16x16.png`
+  - link.icon32x32 = `${baseDir}favicon/favicon-32x32.png`
+  - link.icon96x96 = `${baseDir}favicon/favicon-96x96.png`
+  - linkCssAttrs = [`${baseDir}css/social-nav.css`, `${baseDir}css/forms.css`, `${baseDir}css/main-nav.css`, `${baseDir}css/news.css`]
+  - linkJsAttrs = ['']
+  -
+    var navContent = {'items':[
+    {
+    'textLink': 'О НАС',
+    'dropdownClass': 'js-nav-dropdown-link active',
+    'dropdown': [
+    {
+    'textLinkDropdown': 'О компании',
+    },
+    {
+    'textLinkDropdown': 'Новости',
+    },
+    {
+    'textLinkDropdown': 'Статьи',
+    },
+    {
+    'textLinkDropdown': 'Вакансии',
+    },
+    {
+    'textLinkDropdown': 'Фотогалерея',
+    }
+    ]
+    },
+    {
+    'textLink': 'КАТАЛОГ'
+    },
+    {
+    'textLink': 'РАСПРОДАЖА'
+    },
+    {
+    'textLink': 'КОЛЛЕКТИВАМ'
+    },
+    {
+    'textLink': 'АКЦИИ'
+    },
+    {
+    'textLink': 'КОНТАКТЫ'
+    }
+    ]}
+
+    var breadcrumbsContent = {'items':[
+    {
+    'text': 'Главная'
+    },
+    {
+    'text': 'О компании'
+    },
+    {
+    'text': 'Наши новости'
+    },
+    {
+    'text': 'Конкурс рисунка',
+    'last': true
+    }
+    ]}
+block content
+  include pug/parts/main-header
+  +breadcrumbs(breadcrumbsContent)
+  section.new
+    .container
+      h2.inner-page-title
+        span Конкурс Рисунка от Флик фляк
+      article.new-article
+        .new-article
+          .new-article__date
+            | 16 апреля 2019
+          h2.new-article__title
+            | Внимание, Конкурс!
+          .new-article__pic.new-article__pic--left
+            img(src=`${baseDir}images/news/new_img.jpg` srcset=`${baseDir}images/news/new_img@2x.jpg` alt='')
+          p
+            | Друзья , хотим отметить волшебную красоту эстетических видов спорта и танцев во всех их направлениях . Наблюдая за этим искусством , мы получаем вдохновение и головокружительное удовольствие от каждого движения !
+            br
+            | Предлагаем Вам принять участие в творческом конкурсе на лучший рисунок.
+            br
+            | Если ты творческий и талантливый, а это несомненно так, то поспеши принять участие в конкурсе на лучший рисунок! Трое победителей получат призы!
+          p
+            | Изобрази любой рисунок на тему танцев или гимнастики .
+            br
+            | 1. Добавь фото с рисунком в альбом #[a(href='#') https://vk.com/album-46774617_260563923] и набери большее количество лайков от наших подписчиков .
+            br
+            | 2. Сделай репост этой записи и сохрани его до итогов конкурса!
+            br
+            | 3. Обязательно будь подписан на нашу группу Флик Фляк - товары для танцев
+          p
+            strong.strong
+              | ТРЁХ ПОБЕДИТЕЛЕЙ ЖДУТ ПРИЗЫ!
+              br
+            | 1 место - #[strong(class='strong') СЕРТИФИКАТ 2500 руб + СКИДОЧНАЯ КАРТА 5%]
+            br
+            | 2 место - #[strong(class='strong') СЕРТИФИКАТ 2500 руб]
+            br
+            | 3 место - #[strong(class='strong') СЕРТИФИКАТ 2500 руб]
+          p
+            strong.strong.strong--small
+              | ДА , ЭТО НЕ ШУТКА !!! ЦЕЛЫХ ТРИ ПОБЕДИТЕЛЯ , ПОЛУЧАТ ДОРОГОСТОЯЩИЕ ПРИЗЫ!
+          p
+            | ФИНАЛ конкурса состоится #[strong 10 мая 2019]
+            br
+            | Итоги конкурса будут подведены #[strong 25 МАЯ В 18:00‼]
+          p
+            | СРЕДИ ТРЁХ ФИНАЛИСТОВ набравших большее количество лайков от наших подписчиков.
+            br
+            | Порядок призовых мест определит открытое голосование ,между подписчиками группы.
+            br
+            | Голоса и лайки принимаются только от подписчиков нашей группы #[a(href='#' class='new-article__link') Флик Фляк - товары для танцев]
+  include pug/parts/main-footer

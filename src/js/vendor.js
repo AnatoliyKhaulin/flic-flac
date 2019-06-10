@@ -24,4 +24,9 @@ $('select').customSelect({
   transition: 100
 });
 
-lightGallery(document.getElementById('lightgallery'));
+let lightGalleryItems = document.querySelectorAll('.lightgallery');
+
+lightGalleryItems.forEach((item, index) => {
+  lightGallery(item);
+});
+
