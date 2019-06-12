@@ -1,0 +1,507 @@
+extends pug/base
+
+prepend vars
+  - title = 'Таблица размеров - Флик Фляк'
+
+append vars
+  - link.appleTouchIcon = `${baseDir}favicon/apple-icon.png`
+  - link.appleTouchIcon57x57 = `${baseDir}favicon/apple-icon-57x57.png`
+  - link.appleTouchIcon60x60 = `${baseDir}favicon/apple-icon-60x60.png`
+  - link.appleTouchIcon72x72 = `${baseDir}favicon/apple-icon-72x72.png`
+  - link.appleTouchIcon76x76 = `${baseDir}favicon/apple-icon-76x76.png`
+  - link.appleTouchIcon114x114 = `${baseDir}favicon/apple-icon-114x114.png`
+  - link.appleTouchIcon120x120 = `${baseDir}favicon/apple-icon-120x120.png`
+  - link.appleTouchIcon144x144 = `${baseDir}favicon/apple-icon-144x144.png`
+  - link.appleTouchIcon152x152 = `${baseDir}favicon/apple-icon-152x152.png`
+  - link.appleTouchIcon180x180 = `${baseDir}favicon/apple-icon-180x180.png`
+  - link.appleTouchIconPrecomposed = `${baseDir}favicon/apple-icon-precomposed.png`
+  - link.icon = `${baseDir}favicon/favicon.ico`
+  - link.icon16x16 = `${baseDir}favicon/favicon-16x16.png`
+  - link.icon32x32 = `${baseDir}favicon/favicon-32x32.png`
+  - link.icon96x96 = `${baseDir}favicon/favicon-96x96.png`
+  - linkCssAttrs = [`${baseDir}css/social-nav.css`, `${baseDir}css/forms.css`, `${baseDir}css/main-nav.css`, `${baseDir}css/sizes.css`]
+  - linkJsAttrs = ['']
+  -
+    var navContent = {'items':[
+    {
+    'textLink': 'О НАС',
+    'dropdownClass': 'js-nav-dropdown-link active',
+    'dropdown': [
+    {
+    'textLinkDropdown': 'О компании',
+    },
+    {
+    'textLinkDropdown': 'Новости',
+    },
+    {
+    'textLinkDropdown': 'Статьи',
+    },
+    {
+    'textLinkDropdown': 'Вакансии',
+    },
+    {
+    'textLinkDropdown': 'Фотогалерея',
+    }
+    ]
+    },
+    {
+    'textLink': 'КАТАЛОГ'
+    },
+    {
+    'textLink': 'РАСПРОДАЖА'
+    },
+    {
+    'textLink': 'КОЛЛЕКТИВАМ'
+    },
+    {
+    'textLink': 'АКЦИИ'
+    },
+    {
+    'textLink': 'КОНТАКТЫ'
+    }
+    ]}
+
+    var breadcrumbsContent = {'items':[
+    {
+    'text': 'Главная'
+    },
+    {
+    'text': 'Таблица размеров',
+    'last': true
+    }
+    ]}
+block content
+  include pug/parts/main-header
+  +breadcrumbs(breadcrumbsContent)
+  section.sizes
+    .container
+      h2.inner-page-title
+        span Таблица размеров
+      h3.sizes__title
+        +svg('hanger').sizes__title-ic
+        | Таблица размеров одежды
+      +sizesTable({'rows': [
+          {
+            col: [
+              {
+                text: 'Размер',
+                strong: true
+              },
+              {
+                text: '26'
+              },
+              {
+                text: '28'
+              },
+              {
+                text: '30'
+              },
+              {
+                text: '32',
+              },
+              {
+                text: '34'
+              },
+              {
+                text: '36',
+              },
+              {
+                text: '38'
+              },
+              {
+                text: '40',
+              },
+              {
+                text: '42'
+              },
+              {
+                text: '44'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: 'Рост, см',
+                strong: true
+              },
+              {
+                text: '110-116'
+              },
+              {
+                text: '116-122'
+              },
+              {
+                text: '122-128'
+              },
+              {
+                text: '128-134',
+              },
+              {
+                text: '134-140'
+              },
+              {
+                text: '140-146',
+              },
+              {
+                text: '146-152'
+              },
+              {
+                text: '152-158',
+              },
+              {
+                text: '158-164'
+              },
+              {
+                text: '164-170'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: 'Обхват груди, см',
+                strong: true
+              },
+              {
+                text: '50-52'
+              },
+              {
+                text: '53-56'
+              },
+              {
+                text: '57-60'
+              },
+              {
+                text: '61-64',
+              },
+              {
+                text: '65-68'
+              },
+              {
+                text: '69-72',
+              },
+              {
+                text: '73-76'
+              },
+              {
+                text: '77-80',
+              },
+              {
+                text: '81-84'
+              },
+              {
+                text: '85-88'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: 'Обхват бедер, см',
+                strong: true
+              },
+              {
+                text: '56-58'
+              },
+              {
+                text: '59-62'
+              },
+              {
+                text: '63-166'
+              },
+              {
+                text: '67-70',
+              },
+              {
+                text: '71-74'
+              },
+              {
+                text: '75-78',
+              },
+              {
+                text: '79-82'
+              },
+              {
+                text: '83-86',
+              },
+              {
+                text: '87-90'
+              },
+              {
+                text: '91-94'
+              }
+            ]
+          }
+        ]})
+
+      h3.sizes__title
+        +svg('ballet-shoes').sizes__title-ic
+        | Рекомендация как правильно определить нужный размер танцевальной, сценической обуви.
+      p.sizes__description
+        | Поставьте стопу на лист бумаги, аккуратно обведите карандашом контуры стопы не делая припусков по длине. Измерьте расстояние между наиболее выступающими точками стопы (пятки и первым или вторым пальцами ноги). Полученный результат в миллиметрах, сравните с нашей таблицей размеров.
+      .sizes__wrapper
+        +sizesTable({
+        'rows': [
+          {
+            col: [
+              {
+                text: 'Длина стопы в мм',
+                strong: true
+              },
+              {
+                text: 'Размер',
+                strong: true
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '170 мм'
+              },
+              {
+                text: '25'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '175 мм'
+              },
+              {
+                text: '26'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '180 мм'
+              },
+              {
+                text: '27'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '185-190 мм'
+              },
+              {
+                text: '28'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '195 мм'
+              },
+              {
+                text: '29'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '200 мм'
+              },
+              {
+                text: '30'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '205-210 мм'
+              },
+              {
+                text: '31'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '215 мм'
+              },
+              {
+                text: '32'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '220 мм'
+              },
+              {
+                text: '33'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '225-230 мм'
+              },
+              {
+                text: '34'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '235 мм'
+              },
+              {
+                text: '35'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '240 мм'
+              },
+              {
+                text: '36'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '245-250 мм'
+              },
+              {
+                text: '37'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '255 мм'
+              },
+              {
+                text: '38'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '260 мм'
+              },
+              {
+                text: '39'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '265 мм'
+              },
+              {
+                text: '40'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '270-275 мм'
+              },
+              {
+                text: '41'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '280 мм'
+              },
+              {
+                text: '42'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '285 мм'
+              },
+              {
+                text: '43'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '290 мм'
+              },
+              {
+                text: '44'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '295-300 мм'
+              },
+              {
+                text: '45'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '305 мм'
+              },
+              {
+                text: '46'
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                text: '310 мм'
+              },
+              {
+                text: '47'
+              }
+            ]
+          },
+        ]}).sizes__table--vertical
+        .sizes-steps
+          .sizes-steps__pic
+            img(src=`${baseDir}images/sizes/sizes_img_1.jpg` srcset=`${baseDir}images/sizes/sizes_img_1@2x.jpg` alt='')
+            span.sizes-steps__num
+              | 1
+          .sizes-steps__pic
+            img(src=`${baseDir}images/sizes/sizes_img_2.jpg` srcset=`${baseDir}images/sizes/sizes_img_2@2x.jpg` alt='')
+            span.sizes-steps__num
+              | 2
+          .sizes-steps__pic
+            img(src=`${baseDir}images/sizes/sizes_img_3.jpg` srcset=`${baseDir}images/sizes/sizes_img_3@2x.jpg` alt='')
+            span.sizes-steps__num
+              | 3
+      footer.sizes__footer
+        +svg('warning').sizes__title-ic
+        p
+          | Данная размерная сетка подходит не для всех товаров из нашего магазина, для более точной информации по соответствию размеров на конкретный товар обращайтесь по телефонам и электронной почте.
+
+  include pug/parts/main-footer

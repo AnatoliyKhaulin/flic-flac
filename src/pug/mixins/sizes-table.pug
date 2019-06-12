@@ -1,0 +1,11 @@
+mixin sizesTable(data)
+  table.sizes__table(class!=attributes.class)
+    each row in data.rows
+      tr
+        each col in row.col
+          td
+            if col.strong
+              strong
+                | !{col.text}
+            else
+              | !{col.text}

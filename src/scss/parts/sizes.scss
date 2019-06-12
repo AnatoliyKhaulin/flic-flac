@@ -1,0 +1,141 @@
+@import "../variables";
+
+.sizes {
+  position: relative;
+  padding-bottom: 80px;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    &-ic {
+      margin-right: 7px;
+      width: 32px;
+      height: 32px;
+      fill: $color-limeade;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+
+    .sizes__table {
+      margin-right: 55px;
+      width: 270px;
+    }
+  }
+
+  &__table {
+    margin-bottom: 20px;
+    border: 1px solid #dcdcdc;
+    border-collapse: separate;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), inset 0 1px 1px #ffffff;
+    background-color: #fbfbfb;
+
+    tr {
+      &:last-of-type {
+        td {
+          border-bottom: none;
+        }
+      }
+
+      &:nth-of-type(even) {
+        background-color: #f4f4f4;
+      }
+    }
+
+    td {
+      border-right: 1px solid #dcdcdc;
+      border-bottom: 1px solid #dcdcdc;
+      padding: 16px 14px;
+      font-size: 16px;
+      line-height: 1.1;
+      text-align: center;
+      color: #555;
+
+      strong {
+        font-weight: 700;
+      }
+
+      &:first-of-type {
+        padding-left: 20px;
+        text-align: left;
+      }
+
+      &:last-of-type {
+        border-right: none;
+        padding-right: 20px;
+      }
+    }
+
+    &--vertical {
+      td {
+        &:first-of-type {
+          padding-right: 10px;
+          padding-left: 10px;
+          text-align: center;
+        }
+
+        &:last-of-type {
+          padding-right: 10px;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 22px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  &__footer {
+    display: flex;
+
+    p {
+      margin: 0;
+      padding-top: 10px;
+      width: calc(100% - 32px);
+    }
+  }
+}
+
+.sizes-steps {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 821px;
+
+  &__pic {
+    position: relative;
+    border: 1px solid $color-alto;
+    width: 259px;
+    height: 214px;
+  }
+
+  &__num {
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
+    background-color: $color-green-pea;
+  }
+}
