@@ -71,7 +71,7 @@
     font-size: 14px;
   }
 
-  input {
+  input, textarea {
     border: 1px solid $color-alto;
     border-radius: 0;
     padding: 4px;
@@ -183,6 +183,10 @@
       height: 55px;
       resize: none;
     }
+  }
+
+  &--align-items-start {
+    align-items: flex-start;
   }
 }
 

@@ -40,3 +40,40 @@ footer.main-footer
         | &copy; 2019 ВСЕ ПРАВА ЗАЩИЩЕНЫ
       p
         | РАЗРАБОТКА И ПОДДЕРЖКА #[a(href="#") smartraf]
+  +popupLogin({
+      'type': 'login',
+      'name': 'loginPopup',
+      'title': 'Вход ',
+      'fields': [{
+        'placeholder': 'Логин или электронная почта',
+        'name': 'login'
+      },
+      {
+        'placeholder': 'Пароль',
+        'name': 'pass'
+      }],
+      'btnText': 'Войти на сайт'
+  })
+  +popupLogin({
+      'type': 'register',
+      'name': 'registerPopup',
+      'title': 'Регистрация',
+      'fields': [{
+        'placeholder': 'ФИО*',
+        'name': 'fullName'
+      },
+      {
+        'placeholder': 'Е-mail*',
+        'name': 'email'
+      },
+      {
+        'placeholder': 'Пароль',
+        'name': 'password'
+      },
+      {
+        'placeholder': 'Повторить пароль',
+        'name': 'confirmPassword'
+      },
+      ],
+      'btnText': 'Зарегистрироваться'
+  })

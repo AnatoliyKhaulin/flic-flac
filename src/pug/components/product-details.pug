@@ -1,5 +1,7 @@
 section.product-details
   .product-details__item
+    +btn('fill')(data-show-text='Фильтр товаров' data-hide-text='Скрыть фильтр').js-show-sidebar.product-details__show-sidebar
+      | Фильтр товаров
     .product-pictures.lightgallery
       .product-pictures__big(data-src=`${baseDir}images/products/product_image_1@2x.jpg`)
         img(src=`${baseDir}images/products/product_image_1.jpg` srcset=`${baseDir}images/products/product_image_1@2x.jpg` alt='')

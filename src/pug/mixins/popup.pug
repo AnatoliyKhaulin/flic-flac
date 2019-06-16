@@ -13,3 +13,34 @@ mixin popup(name)
         input(type='text' placeholder='Телефон')
       +btn('fill').btn--fill-dark
         | Заказать
+
+mixin popupLogin(data)
+  .popup.popup--login(id=data.name)
+    .popup__container
+      a.popup__close(href='#') +
+      .popup__title
+        h2
+          | !{data.title}
+      each field in data.fields
+        .form-field
+          input(type='text' placeholder=field.placeholder name=field.name)
+      +btn('fill').btn--fill-dark
+        | !{data.btnText}
+      if data.type === 'login'
+        footer.popup__footer
+          label.form-field.form-field--checkbox
+            input(type='checkbox' name='remember')
+            span.checkbox-ic
+              +svg('tick').checkbox-ic-tick
+            span.checkbox-text
+              | Запомнить меня
+          a(href='#')
+            | Забыли пароль?
+      if data.type === 'register'
+        footer.popup__footer
+          label.form-field.form-field--checkbox.form-field--align-items-start
+            input(type='checkbox' name='confirmData')
+            span.checkbox-ic
+              +svg('tick').checkbox-ic-tick
+            span.checkbox-text
+              | Согласен с условиями обработки персональных данных

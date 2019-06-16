@@ -22,9 +22,9 @@ header.main-header
                 +svg(`${item}`)(class=`social-nav__ic social-nav__${item}`)
 
       form.sign-form(action="/")
-        a.sign-form__link(href="#")
+        a.sign-form__link(href="#" data-target='loginPopup').show-popup
           | Вход
-        a.sign-form__link(href="#")
+        a.sign-form__link(href="#" data-target='registerPopup').show-popup
           | Регистрация
 
   .main-header__middle

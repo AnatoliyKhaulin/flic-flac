@@ -23,6 +23,20 @@
     margin-right: 75px;
     width: 136px;
     height: 136px;
+
+    @media (max-width: 1023px) {
+      margin-right: 75 / 1024 * 100vw;
+    }
+
+    @media (max-width: 767px) {
+      margin-right: 25px;
+    }
+
+    @media (max-width: 430px) {
+      margin-right: 25 / 430 * 100vw;
+      width: 136 / 430 * 100vw;
+      height: 136 / 430 * 100vw;
+    }
   }
 
   &__info {
@@ -45,6 +59,21 @@
       display: block;
       font-size: 18px;
     }
+
+    @media (max-width: 1023px) {
+      margin-right: 0;
+      width: (365 + 225) / 1024 * 100vw;
+    }
+
+    @media (max-width: 767px) {
+      padding-top: 0;
+      padding-bottom: 10px;
+      width: calc(100% - 136px - 25px);
+    }
+
+    @media (max-width: 430px) {
+      width: calc(100% - ((136 + 25) / 430 * 100vw));
+    }
   }
 
   &__count {
@@ -52,12 +81,26 @@
     margin-right: 30px;
     padding-bottom: 40px;
     width: 80px;
+
+    @media (max-width: 1023px) {
+      margin-right: 20 / 1024 * 100vw;
+    }
+
+    @media (max-width: 767px) {
+      margin-right: 20 / 768 * 100vw;
+      margin-left: calc(136px + 25px);
+    }
+
+    @media (max-width: 430px) {
+      margin-left: calc((136 + 25) / 430 * 100vw);
+    }
   }
 
   &__price {
     margin-top: auto;
     padding-bottom: 45px;
     font-size: 18px;
+    white-space: nowrap;
   }
 
   &__close {
@@ -68,6 +111,15 @@
     font-size: 50px;
     transform: rotate(45deg);
     cursor: pointer;
+
+    @media (max-width: 767px) {
+      right: 8px;
+      top: -20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    flex-flow: row wrap;
   }
 }
 

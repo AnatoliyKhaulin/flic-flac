@@ -9,11 +9,19 @@ if(fivesSliderContainer) {
     perView: 5,
     gap: 16,
     breakpoints: {
+      1200: {
+        perView: 4,
+        gap: 8
+      },
       1024: {
+        perView: 3,
         gap: 8,
       },
       768: {
         perView: 3,
+      },
+      680: {
+        perView: 2,
       },
       600: {
         perView: 1,
