@@ -21,22 +21,26 @@
   input[type="search"] {
     display: block;
     margin: 0;
-    border: none;
+    border: 1px solid $color-alto;
     border-radius: 40px;
     padding: 10px 15px;
+    padding-left: 44px;
     max-width: 100%;
     box-sizing: border-box;
     font-size: 14px;
-    background-color: #f8f8f8;
+    background-color: darken(#f8f8f8, 5%);
+    transition: background-color 0.2s;
 
     &::placeholder {
-      padding-left: 47px - 18px;
       color: #919090;
       transition: color 0.3s;
     }
 
     &:focus {
       outline: none;
+      padding-left: 15px;
+      background-color: #f8f8f8;
+      transition: background-color 0.2s;
 
       &::placeholder {
         color: transparent;

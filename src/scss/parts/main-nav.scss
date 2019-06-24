@@ -92,6 +92,16 @@
         }
       }
     }
+
+    @media (max-width: 490px) {
+      &.active {
+        color: $color-jewel;
+
+        &::after {
+          background-color: $color-jewel;
+        }
+      }
+    }
   }
 
   &__dropdown {
